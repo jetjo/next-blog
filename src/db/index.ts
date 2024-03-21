@@ -1,9 +1,8 @@
-import { createCollectionEndpoint } from "@/utils/mongoose";
+import { ObjectId, db, connectOption } from "@/utils/mongoose";
 
-const createEndpoint = createCollectionEndpoint.bind(
-  null,
-  "mongodb://localhost:27017",
-  { dbName: "test" }
-);
+let uri = "mongodb://localhost:27017";
 
-export default createEndpoint;
+uri = `${uri}/${connectOption.dbName}`;
+await db.connect(uri, connectOption);
+
+export { ObjectId, db };
