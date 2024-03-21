@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { createPost } from "../actions";
 // import { usePathname } from "next/navigation";
 
 export default function Blogs() {
@@ -17,7 +18,11 @@ export default function Blogs() {
         <h1 className="flex center-h">My blogs</h1>
         <Link href="/">Go Home</Link>
       </header>
-      <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
+      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <form className="" action={createPost}>
+          <button>保存</button>
+        </form>
+      </main>
     </>
   );
 }
