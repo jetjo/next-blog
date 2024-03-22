@@ -1,4 +1,4 @@
-import { db } from "../db";
+import { db, dbOption } from "../db";
 
 import { option as userOption, User } from "./User";
 import { option as commentOption, Comment } from "./Comment";
