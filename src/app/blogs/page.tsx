@@ -19,7 +19,17 @@ export default function Blogs() {
         <Link href="/">Go Home</Link>
       </header>
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <h2>新建文章</h2>
         <form className="" action={createPost}>
+          <input
+            type="file"
+            name="post"
+            id="post"
+            className="visually-hidden"
+            accept=".mdx"
+            defaultValue=""
+          />
+          <label htmlFor="post">上传文章</label>
           <button>保存</button>
         </form>
       </main>
