@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { createPost } from "../actions";
+import { createPost } from "../../actions";
 // import { usePathname } from "next/navigation";
 
 export default function Blogs() {
