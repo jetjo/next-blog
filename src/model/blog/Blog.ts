@@ -1,3 +1,5 @@
+import { ObjectId } from "@/db";
+
 const file = {} as File;
 file.lastModified;
 file.name;
@@ -24,6 +26,12 @@ export const Blog = {
   },
   type: {
     type: String,
+  },
+  accessId: {
+    type: ObjectId,
+  },
+  relationshipId: {
+    type: ObjectId,
   },
 };
 

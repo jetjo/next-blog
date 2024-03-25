@@ -1,0 +1,12 @@
+.prose {
+  --fg-light: #888;
+  --fg: #555;
+  --fg-deep: #222;
+  --fg-deeper: #000;
+  /* color: var(--fg); */
+  margin: 0 auto;
+  max-width: 65ch;
+  font-size: 1rem;
+  line-height: 1.75;
+  /* padding-right: 9em; */
+}

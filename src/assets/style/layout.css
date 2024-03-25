@@ -1,3 +1,4 @@
+@tailwind components;
 /* Convention: `items`代表所有第一级`div` */
 
 .float-items > div {
@@ -60,4 +61,40 @@
 
 .items-mr0 > div {
   margin-right: 0;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+.content-center {
+  place-content: center;
+}
+
+.auto-h {
+  height: auto;
+}
+
+.items-stretch {
+  place-items: stretch;
+}
+
+.content-end {
+  place-content: end;
+}
+
+.li-disc {
+  list-style: disc;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+@layer components {
+  .of-x-hidden {
+    overflow-x: hidden;
+  }
 }

@@ -1,7 +1,11 @@
+import style from "./layout.module.css";
+
 export default function Layout(props: { children: React.ReactNode }) {
-  return (
-    <main className="flex min-h-screen flex-col p-24">
-      <section>{props.children}</section>
-    </main>
-  );
+  // NOTE: useSelectedLayoutSegment(s) only works in Client Components.
+  // const routeSegment = useSelectedLayoutSegment();
+  // console.log(routeSegment);
+  // const routeSegmentsC = useSelectedLayoutSegments();
+  // console.log(routeSegmentsC);
+  
+  return <article className={`${style.article}`}>{props.children}</article>;
 }

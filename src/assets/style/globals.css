@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --bg: #fffffa;
+  --bg-dark: #0909093b;
+  --bg-img-url: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
+  font-size: large;
+}
+
+:root[theme="dark"] {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  --bg-img-url: url("https://www.transparenttextures.com/patterns/white-diamond.png");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([theme*="light"]) {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+    --bg-img-url: url("https://www.transparenttextures.com/patterns/white-diamond.png");
+  }
+}
+
+body {
+  transition: all 1.5s;
+  color: rgb(var(--foreground-rgb));
+  background-color: light-dark(var(--bg), var(--bg-dark));
+  background-image: var(--bg-img-url);
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

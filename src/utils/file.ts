@@ -13,12 +13,12 @@ export async function readFile(path: string) {
     try {
       const info = await fs.stat(path);
       return info.isFile();
-    } catch (error) {
-      console.error(error);
+    } catch (error: any) {
+      console.error(error.message);
       return false;
     }
   };
-  if (!isFile()) return "";
+  if (!(await isFile())) return "";
   const code = await fs.readFile(path, "utf-8");
   return code;
 }

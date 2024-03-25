@@ -27,7 +27,8 @@ const mdxRuntime$ = {
   baseUrl: import.meta.url,
 } as RunOptions;
 
-export async function loadCom_({ code } = { code: "" }) {
+export async function loadCom_({ code } = { code: "" }, fragment=null) {
+  if(fragment) mdxRuntime.Fragment = fragment;
   // prettier-ignore
   const { default: Content } = await run(code, mdxRuntime) as MDXModule;
   return Content;

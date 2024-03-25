@@ -1,6 +1,8 @@
-import { getPost } from "@/app/actions";
 import { loadCom_ } from "@/utils/mdx/load";
-import { gen_BlogHeader2 } from "@/utils/mdx/mdx-header";
+import { getPost } from "../../actions";
+import Header2 from "./_header2";
+import MDXLayout from "./_MDXLayout";
+import _Fragment from "./_fragment";
 
 export default async function Page(props: any) {
   const {
@@ -8,11 +10,16 @@ export default async function Page(props: any) {
   } = props;
   const pathName = `/post/${id}`;
   const { post, content } = await getPost(id);
-  const MDXContent = await loadCom_({ code: content || "" });
+  // return <pre>{JSON.stringify({ post, content }, null, 4)}</pre>;
+  console.log(content.content);
+
+  const MDXContent = await loadCom_({ code: content.content || "" }, _Fragment as any);
+  // console.log(MDXContent.toString());
+
   return (
     <>
       {MDXContent({
-        components: gen_BlogHeader2({ path: pathName, _components: {} }),
+        components: Header2({ path: pathName, _components: { wrapper: MDXLayout } }),
       })}
     </>
   );

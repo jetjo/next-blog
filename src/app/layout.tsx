@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import "./pos.css";
-import "./layout.css";
+// import { Inter } from "next/font/google";
+import "@/assets/style";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
+
+import {Roboto} from 'next/font/google'
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight : ['900']
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,10 +20,12 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout(props: Readonly<any>) {
-  // console.log(props, "RootLayout");
   return (
     <html lang="en">
-      <body className={inter.className}>{props.children}</body>
+      <body>
+        {/* {props.nav} */}
+        {props.children}
+      </body>
     </html>
   );
 }

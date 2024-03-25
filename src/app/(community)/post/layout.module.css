@@ -1,0 +1,7 @@
+.article {
+  margin: 0 0 1.5rem;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-bg);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}

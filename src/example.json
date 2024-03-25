@@ -1,0 +1,1581 @@
+[
+  {
+    "name": "posts-windicss-and-tailwind-jit",
+    "path": "/posts/windicss-and-tailwind-jit",
+    "component": "cm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Windi CSS and Tailwind JIT",
+        "description": "Wish this is the end.",
+        "date": "2021-03-18T16:00:00.000Z",
+        "lang": "en",
+        "duration": "8min"
+      }
+    }
+  },
+  {
+    "name": "posts-why-reproductions-are-required",
+    "path": "/posts/why-reproductions-are-required",
+    "component": "um",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Why Reproductions are Required",
+        "date": "2022-05-30T16:00:00.000Z",
+        "lang": "en",
+        "duration": "9min",
+        "description": "My thoughts on why reproductions are important in open source."
+      }
+    }
+  },
+  {
+    "name": "posts-why-reproductions-are-required-zh",
+    "path": "/posts/why-reproductions-are-required-zh",
+    "component": "fm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "「请提供最小重现」",
+        "date": "2022-05-30T16:00:00.000Z",
+        "lang": "zh",
+        "duration": "9min",
+        "description": "为什么在开源项目中要求最小重现"
+      }
+    }
+  },
+  {
+    "name": "posts-why-not-prettier",
+    "path": "/posts/why-not-prettier",
+    "component": "pm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Why I don't use Prettier",
+        "date": "2022-10-01T00:00:00.000Z",
+        "lang": "en",
+        "duration": "12min",
+        "description": "The reason why I don't use Prettier in my projects."
+      }
+    }
+  },
+  {
+    "name": "posts-why-not-prettier-zh",
+    "path": "/posts/why-not-prettier-zh",
+    "component": "dm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "为什么我不使用 Prettier",
+        "date": "2022-10-01T00:00:00.000Z",
+        "lang": "zh",
+        "duration": "12min",
+        "description": "我不在我的项目中使用 Prettier 的理由。"
+      }
+    }
+  },
+  {
+    "name": "posts-watch-with-reactivity",
+    "path": "/posts/watch-with-reactivity",
+    "component": "hm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Watch with @vue/reactivity",
+        "description": "A brief intro of how it works and a guide to implementing the (missing) `watch` on your own.",
+        "date": "2020-09-18T00:00:00.000Z",
+        "lang": "en",
+        "duration": "12min"
+      }
+    }
+  },
+  {
+    "name": "posts-vueuse-best-practice-vueconf-china-2022",
+    "path": "/posts/vueuse-best-practice-vueconf-china-2022",
+    "component": "mm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "VueUse 最佳实践",
+        "place": "VueConf China 2022",
+        "description": "VueUse 最佳实践 - VueConf China 2022",
+        "date": "2022-12-10T00:00:00.000Z",
+        "lang": "zh",
+        "type": "talk",
+        "recording": "!0",
+        "duration": "10min"
+      }
+    }
+  },
+  {
+    "name": "posts-vue-beijing-2021",
+    "path": "/posts/vue-beijing-2021",
+    "component": "gm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Develop with Vite",
+        "place": "Vue Beijing",
+        "type": "talk+blog",
+        "date": "2021-03-28T16:00:00.000Z",
+        "lang": "en",
+        "recording": "!0",
+        "duration": "18min"
+      }
+    }
+  },
+  {
+    "name": "posts-vue-3-notes",
+    "path": "/posts/vue-3-notes",
+    "component": "_m",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Vue 3 Migration Notes",
+        "date": "2020-07-01T00:00:00.000Z",
+        "lang": "en"
+      }
+    }
+  },
+  {
+    "name": "posts-vite-on-demand-dx-viteconf-2022",
+    "path": "/posts/vite-on-demand-dx-viteconf-2022",
+    "component": "ym",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Vite, the on-demand DX",
+        "place": "ViteConf 2022",
+        "description": "Vite, the on-demand DX - ViteConf 2022",
+        "date": "2022-10-11T00:00:00.000Z",
+        "lang": "en",
+        "type": "talk",
+        "recording": "!0",
+        "duration": "10min"
+      }
+    }
+  },
+  {
+    "name": "posts-types-for-sub-modules",
+    "path": "/posts/types-for-sub-modules",
+    "component": "vm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Types for Submodules",
+        "date": "2021-03-01T16:00:00.000Z",
+        "lang": "en",
+        "duration": "5min",
+        "type": "note"
+      }
+    }
+  },
+  {
+    "name": "posts-typed-provide-and-inject-in-vue",
+    "path": "/posts/typed-provide-and-inject-in-vue",
+    "component": "wm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Typed Provide and Inject in Vue",
+        "date": "2021-03-05T16:00:00.000Z",
+        "lang": "en",
+        "duration": "8min"
+      }
+    }
+  },
+  {
+    "name": "posts-type-your-config",
+    "path": "/posts/type-your-config",
+    "component": "bm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Type your Config",
+        "date": "2021-03-24T16:00:00.000Z",
+        "lang": "en",
+        "duration": "5min",
+        "type": "note"
+      }
+    }
+  },
+  {
+    "name": "posts-type-inferencing-in-vue",
+    "path": "/posts/type-inferencing-in-vue",
+    "component": "Tm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Type Inferencing in Vue",
+        "date": "2020-06-28T00:00:00.000Z",
+        "lang": "en"
+      }
+    }
+  },
+  {
+    "name": "posts-sliding-enter-animation",
+    "path": "/posts/sliding-enter-animation",
+    "component": "Sm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Sliding Enter Animation",
+        "date": "2023-05-07T00:00:00.000Z",
+        "lang": "en",
+        "duration": "6min",
+        "description": "Adding an elegant sliding enter animation to your blog."
+      }
+    }
+  },
+  {
+    "name": "posts-shikiji-twoslash",
+    "path": "/posts/shikiji-twoslash",
+    "component": "Em",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "TwoSlash with Shiki",
+        "date": "2023-12-12T16:00:00.000Z",
+        "lang": "en",
+        "duration": "2min",
+        "type": "note"
+      }
+    }
+  },
+  {
+    "name": "posts-shiki-magic-move",
+    "path": "/posts/shiki-magic-move",
+    "component": "xm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "The Magic in Shiki Magic Move",
+        "date": "2024-03-04T00:00:00.000Z",
+        "lang": "en",
+        "duration": "15min",
+        "description": "The methodology behind Shiki Magic Move."
+      }
+    }
+  },
+  {
+    "name": "posts-roads-to-oss-set-theory-vuefesjapan-2023",
+    "path": "/posts/roads-to-oss-set-theory-vuefesjapan-2023",
+    "component": "$m",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Anthony's Roads to Open Source - The Set Theory",
+        "place": "Vue Fes Japan 2023",
+        "description": "Anthony's Roads to Open Source - The Set Theory - Vue Fes Japan 2023",
+        "date": "2023-10-28T08:00:00.000Z",
+        "lang": "en",
+        "inperson": "!0",
+        "type": "talk",
+        "recording": "!1",
+        "duration": "30min"
+      }
+    }
+  },
+  {
+    "name": "posts-roads-to-oss-set-theory-viteconf-2023",
+    "path": "/posts/roads-to-oss-set-theory-viteconf-2023",
+    "component": "Cm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Anthony's Roads to Open Source - The Set Theory",
+        "place": "ViteConf 2023",
+        "placeLink": "https://viteconf.org/23/",
+        "description": "Anthony's Roads to Open Source - The Set Theory - ViteConf 2023",
+        "date": "2023-10-05T08:00:00.000Z",
+        "lang": "en",
+        "type": "talk",
+        "recording": "!0",
+        "duration": "20min"
+      }
+    }
+  },
+  {
+    "name": "posts-roads-to-oss-set-theory-react-paris-2024",
+    "path": "/posts/roads-to-oss-set-theory-react-paris-2024",
+    "component": "Pm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Anthony's Roads to Open Source - The Set Theory (React ver.)",
+        "place": "React Paris 2024",
+        "description": "Anthony's Roads to Open Source - The Set Theory - React Paris 2024",
+        "date": "2024-03-22T08:00:00.000Z",
+        "lang": "en",
+        "inperson": "!0",
+        "type": "talk",
+        "recording": "!1",
+        "duration": "25min"
+      }
+    }
+  },
+  {
+    "name": "posts-roads-to-oss-progressive-vueams-2024",
+    "path": "/posts/roads-to-oss-progressive-vueams-2024",
+    "component": "Am",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Anthony's Roads to Open Source - The Progressive Path",
+        "place": "Vue Amsterdam",
+        "placeLink": "https://vuejs.amsterdam/",
+        "description": "Anthony's Roads to Open Source - The Progressive Path - Vue Amsterdam",
+        "date": "2024-02-29T08:00:00.000Z",
+        "lang": "en",
+        "type": "talk",
+        "duration": "30min"
+      }
+    }
+  },
+  {
+    "name": "posts-rewrite-in-vite",
+    "path": "/posts/rewrite-in-vite",
+    "component": "km",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Rewrite in Vite",
+        "date": "2021-01-31T16:00:00.000Z",
+        "lang": "en",
+        "duration": "10min",
+        "description": "My site is now powered by Vite!"
+      }
+    }
+  },
+  {
+    "name": "posts-reimagine-atomic-css",
+    "path": "/posts/reimagine-atomic-css",
+    "component": "Rm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Reimagine Atomic CSS",
+        "date": "2021-10-26T16:00:00.000Z",
+        "lang": "en",
+        "duration": "25min",
+        "description": "Let's take a step back and reimagine what's atomic CSS could be in the best."
+      }
+    }
+  },
+  {
+    "name": "posts-reimagine-atomic-css-zh",
+    "path": "/posts/reimagine-atomic-css-zh",
+    "component": "Om",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "重新构想原子化 CSS",
+        "date": "2021-10-26T16:00:00.000Z",
+        "lang": "zh",
+        "duration": "25min",
+        "description": "打破常规，重新思考原子化 CSS 的最优解。"
+      }
+    }
+  },
+  {
+    "name": "posts-reflection-of-speaking-in-public",
+    "path": "/posts/reflection-of-speaking-in-public",
+    "component": "Lm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Reflection of Speaking in Public",
+        "description": "My sincere apologies to everyone involved.",
+        "date": "2021-03-27T16:00:00.000Z",
+        "lang": "en",
+        "duration": "5min"
+      }
+    }
+  },
+  {
+    "name": "posts-range-in-javascript",
+    "path": "/posts/range-in-javascript",
+    "component": "Mm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Range in JavaScript",
+        "date": "2021-09-13T16:00:00.000Z",
+        "lang": "en",
+        "duration": "1min",
+        "type": "note"
+      }
+    }
+  },
+  {
+    "name": "posts-publish-esm-and-cjs",
+    "path": "/posts/publish-esm-and-cjs",
+    "component": "Im",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Ship ESM & CJS in one Package",
+        "date": "2021-11-29T16:00:00.000Z",
+        "lang": "en",
+        "duration": "15min",
+        "description": "A short tutorial of shipping both ESM and CJS dual formats in a single NPM package."
+      }
+    }
+  },
+  {
+    "name": "posts-pnpm-external-disk",
+    "path": "/posts/pnpm-external-disk",
+    "component": "Dm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "pnpm on External disk",
+        "date": "2023-07-13T12:00:00.000Z",
+        "lang": "en",
+        "duration": "1min",
+        "type": "note"
+      }
+    }
+  },
+  {
+    "name": "posts-patterns-of-vueuse-vuefes-japan-2022",
+    "path": "/posts/patterns-of-vueuse-vuefes-japan-2022",
+    "component": "Vm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Patterns of VueUse",
+        "place": "Vue Fes Japan 2022",
+        "description": "Patterns of VueUse - Vue Fes Japan 2022",
+        "date": "2022-10-16T00:00:00.000Z",
+        "lang": "en",
+        "type": "talk",
+        "duration": "10min"
+      }
+    }
+  },
+  {
+    "name": "posts-optimize-await",
+    "path": "/posts/optimize-await",
+    "component": "Nm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Optimize Await",
+        "date": "2021-07-01T16:00:00.000Z",
+        "lang": "en",
+        "duration": "8min",
+        "type": "note"
+      }
+    }
+  },
+  {
+    "name": "posts-nuxt-dx-strasbourg-2023",
+    "path": "/posts/nuxt-dx-strasbourg-2023",
+    "component": "Hm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "DX with Nuxt DevTools",
+        "place": "StrasbourgJS 2023",
+        "placeLink": "https://strasbourgjs.org/",
+        "description": "Development Experience with DevTools - StrasbourgJS 2023",
+        "date": "2023-05-25T00:00:00.000Z",
+        "lang": "en",
+        "type": "talk",
+        "recording": "!0",
+        "duration": "37min"
+      }
+    }
+  },
+  {
+    "name": "posts-nuxt-dx-2023",
+    "path": "/posts/nuxt-dx-2023",
+    "component": "jm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Development Experience with Nuxt",
+        "place": "Vue Amsterdam 2023",
+        "placeLink": "https://vuejs.amsterdam/",
+        "description": "Development Experience with Nuxt - Vue Amsterdam 2023",
+        "date": "2023-02-09T00:00:00.000Z",
+        "lang": "en",
+        "type": "talk+blog",
+        "recording": "!0",
+        "duration": "25min"
+      }
+    }
+  },
+  {
+    "name": "posts-nuxt-devtools-v1",
+    "path": "/posts/nuxt-devtools-v1",
+    "component": "Fm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Nuxt Devtools v1.0",
+        "date": "2023-11-13T16:00:00.000Z",
+        "lang": "en",
+        "duration": "20min",
+        "redirect": "https://nuxt.com/blog/nuxt-devtools-v1-0"
+      }
+    }
+  },
+  {
+    "name": "posts-npm-binary-mirrors",
+    "path": "/posts/npm-binary-mirrors",
+    "component": "Bm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "NPM Binary 镜像配置",
+        "date": "2022-02-18T16:00:00.000Z",
+        "lang": "zh",
+        "duration": "1min",
+        "type": "note"
+      }
+    }
+  },
+  {
+    "name": "posts-now-and-future-devtools-nuxt-nation-2023",
+    "path": "/posts/now-and-future-devtools-nuxt-nation-2023",
+    "component": "zm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Now, and the Future of Nuxt Devtools",
+        "place": "Nuxt Nation 2023",
+        "placeLink": "https://nuxtnation.com/",
+        "description": "Now, and the Future of Nuxt Devtools - Nuxt Nation 2023",
+        "date": "2023-10-18T08:00:00.000Z",
+        "lang": "en",
+        "type": "talk",
+        "recording": "!0",
+        "duration": "20min"
+      }
+    }
+  },
+  {
+    "name": "posts-new-ways-to-vue-taiwan-2021",
+    "path": "/posts/new-ways-to-vue-taiwan-2021",
+    "component": "Wm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "New Ways to Vue",
+        "place": "{ Laravel x Vue } Conf Taiwan 2021",
+        "description": "New Ways to Vue - { Laravel x Vue } Conf Taiwan 2021",
+        "date": "2021-10-17T08:00:00.000Z",
+        "lang": "zh",
+        "type": "talk",
+        "duration": "30min"
+      }
+    }
+  },
+  {
+    "name": "posts-new-ways-to-vue-london-2021",
+    "path": "/posts/new-ways-to-vue-london-2021",
+    "component": "Um",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "New Ways to Vue",
+        "place": "Vue.js Live London 2021",
+        "placeLink": "https://vuejs.london/",
+        "description": "New Ways to Vue - Vue.js Live London 2021",
+        "date": "2021-10-20T08:00:00.000Z",
+        "lang": "en",
+        "type": "talk",
+        "recording": "!0",
+        "duration": "30min"
+      }
+    }
+  },
+  {
+    "name": "posts-new-house",
+    "path": "/posts/new-house",
+    "component": "qm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "New House",
+        "date": "2020-06-12T16:00:00.000Z",
+        "lang": "en",
+        "duration": "2min"
+      }
+    }
+  },
+  {
+    "name": "posts-netlify-redirects",
+    "path": "/posts/netlify-redirects",
+    "component": "Km",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Netlify Redirects",
+        "date": "2021-02-20T16:00:00.000Z",
+        "lang": "en",
+        "duration": "5min",
+        "type": "note"
+      }
+    }
+  },
+  {
+    "name": "posts-mental-health-oss",
+    "path": "/posts/mental-health-oss",
+    "component": "Zm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Mental Health in Open Source",
+        "description": "Some of my thoughts on my mental health during my journey in Open Source",
+        "date": "2024-03-16T12:00:00.000Z",
+        "lang": "en",
+        "duration": "25min"
+      }
+    }
+  },
+  {
+    "name": "posts-match-quotes-in-pairs",
+    "path": "/posts/match-quotes-in-pairs",
+    "component": "Ym",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Match Quotes in Pairs",
+        "date": "2021-02-28T16:00:00.000Z",
+        "lang": "en",
+        "duration": "5min",
+        "type": "note"
+      }
+    }
+  },
+  {
+    "name": "posts-match-chinese-characters",
+    "path": "/posts/match-chinese-characters",
+    "component": "Gm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Match Chinese Characters",
+        "date": "2021-02-25T16:00:00.000Z",
+        "lang": "en",
+        "duration": "2min",
+        "type": "note"
+      }
+    }
+  },
+  {
+    "name": "posts-manage-github-notifcations-2023",
+    "path": "/posts/manage-github-notifcations-2023",
+    "component": "Jm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "How I Manage GitHub Notifications",
+        "place": "GitHub Maintainer Summit 2023",
+        "description": "Manage GitHub Notifications - GitHub Maintainer Summit 2023",
+        "date": "2023-05-17T00:00:00.000Z",
+        "lang": "en",
+        "recording": "!0",
+        "type": "talk+blog",
+        "duration": "20min"
+      }
+    }
+  },
+  {
+    "name": "posts-make-libraries-working-with-vue-2-and-3",
+    "path": "/posts/make-libraries-working-with-vue-2-and-3",
+    "component": "Xm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Make Libraries Working with Vue 2 and 3",
+        "description": "Try Vue Demi!",
+        "date": "2020-07-01T14:00:00.000Z",
+        "lang": "en",
+        "duration": "5min"
+      }
+    }
+  },
+  {
+    "name": "posts-journey-with-icons",
+    "path": "/posts/journey-with-icons",
+    "component": "Qm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Journey with Icons",
+        "description": "To solve the pain I faced in using icons for the web, I built several tools to make the DX better.",
+        "date": "2020-08-16T16:00:00.000Z",
+        "lang": "en",
+        "duration": "7min"
+      }
+    }
+  },
+  {
+    "name": "posts-journey-with-icons-continues",
+    "path": "/posts/journey-with-icons-continues",
+    "component": "tg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Journey with Icons Continues",
+        "description": "My journey with icons and the solutions I made along the way",
+        "date": "2021-09-10T18:00:00.000Z",
+        "lang": "en",
+        "duration": "15min"
+      }
+    }
+  },
+  {
+    "name": "posts-isomorphic-dirname",
+    "path": "/posts/isomorphic-dirname",
+    "component": "eg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Isomorphic `__dirname`",
+        "date": "2021-08-30T16:00:00.000Z",
+        "lang": "en",
+        "duration": "1min",
+        "type": "note"
+      }
+    }
+  },
+  {
+    "name": "posts-introduction-to-vitest-vue-nation-2022",
+    "path": "/posts/introduction-to-vitest-vue-nation-2022",
+    "component": "ng",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Introduction to Vitest",
+        "place": "Vue.js Nation 2022",
+        "description": "Introduction to Vitest - Vue.js Nation 2022",
+        "date": "2022-01-26T08:00:00.000Z",
+        "lang": "en",
+        "type": "talk",
+        "recording": "!0",
+        "duration": "3min"
+      }
+    }
+  },
+  {
+    "name": "posts-introducing-nuxt-devtools",
+    "path": "/posts/introducing-nuxt-devtools",
+    "component": "og",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Introducing Nuxt Devtools",
+        "date": "2023-03-27T16:00:00.000Z",
+        "lang": "en",
+        "duration": "12min",
+        "redirect": "https://nuxt.com/blog/introducing-nuxt-devtools"
+      }
+    }
+  },
+  {
+    "name": "posts",
+    "path": "/posts",
+    "component": "rg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Blog - Anthony Fu",
+        "display": "",
+        "plum": "!0"
+      }
+    }
+  },
+  {
+    "name": "posts-icons-in-pure-css",
+    "path": "/posts/icons-in-pure-css",
+    "component": "sg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Icons in Pure CSS",
+        "date": "2021-10-31T16:00:00.000Z",
+        "lang": "en",
+        "duration": "10min",
+        "description": "The icon solution in pure CSS."
+      }
+    }
+  },
+  {
+    "name": "posts-icons-in-pure-css-zh",
+    "path": "/posts/icons-in-pure-css-zh",
+    "component": "ig",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "聊聊纯 CSS 图标",
+        "date": "2021-10-31T16:00:00.000Z",
+        "lang": "zh",
+        "duration": "10min",
+        "description": "纯 CSS 中的图标解决方案"
+      }
+    }
+  },
+  {
+    "name": "posts-github-co-authors",
+    "path": "/posts/github-co-authors",
+    "component": "ag",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "GitHub Co-authors",
+        "date": "2021-08-24T16:00:00.000Z",
+        "lang": "en",
+        "duration": "2min",
+        "type": "note"
+      }
+    }
+  },
+  {
+    "name": "posts-github-alerts",
+    "path": "/posts/github-alerts",
+    "component": "lg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "GitHub-style Alerts",
+        "date": "2023-11-30T10:00:00.000Z",
+        "lang": "en",
+        "duration": "2min",
+        "type": "note"
+      }
+    }
+  },
+  {
+    "name": "posts-get-package-root",
+    "path": "/posts/get-package-root",
+    "component": "cg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Get Package Root",
+        "date": "2021-07-14T16:00:00.000Z",
+        "lang": "en",
+        "duration": "1min",
+        "type": "note"
+      }
+    }
+  },
+  {
+    "name": "posts-evolution-of-shiki-v1",
+    "path": "/posts/evolution-of-shiki-v1",
+    "component": "ug",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "The Evolution of Shiki v1.0",
+        "date": "2024-03-11T12:00:00.000Z",
+        "lang": "en",
+        "duration": "20min",
+        "redirect": "https://nuxt.com/blog/shiki-v1"
+      }
+    }
+  },
+  {
+    "name": "posts-domain-email",
+    "path": "/posts/domain-email",
+    "component": "fg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Domain Email",
+        "date": "2020-06-17T16:00:00.000Z",
+        "lang": "en",
+        "duration": "2min",
+        "type": "note"
+      }
+    }
+  },
+  {
+    "name": "posts-dev-ssr-on-nuxt",
+    "path": "/posts/dev-ssr-on-nuxt",
+    "component": "pg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Dev SSR on Nuxt with Vite",
+        "date": "2022-10-04T00:00:00.000Z",
+        "lang": "en",
+        "duration": "15min",
+        "description": "The journey of how we made development time SSR working on Nuxt with Vite"
+      }
+    }
+  },
+  {
+    "name": "posts-destructuring-with-object-or-array",
+    "path": "/posts/destructuring-with-object-or-array",
+    "component": "dg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Destructuring... with object or array?",
+        "description": "Prefer object destructure or array? Can we support both?",
+        "lang": "en",
+        "date": "2020-10-21T16:00:00.000Z",
+        "duration": "8min",
+        "image": "/images/destructuring.png"
+      }
+    }
+  },
+  {
+    "name": "posts-composable-vue-vueday-2021",
+    "path": "/posts/composable-vue-vueday-2021",
+    "component": "hg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Composable Vue",
+        "place": "VueDay 2021",
+        "placeLink": "https://2021.vueday.it/",
+        "description": "Slides & transcript for my talk at VueDay 2021",
+        "date": "2021-04-28T16:00:00.000Z",
+        "lang": "en",
+        "type": "talk+blog",
+        "recording": "!0",
+        "duration": "30min"
+      }
+    }
+  },
+  {
+    "name": "posts-composable-vue-vueconf-china-2021",
+    "path": "/posts/composable-vue-vueconf-china-2021",
+    "component": "mg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "可组合的 Vue",
+        "place": "VueConf China 2021",
+        "description": "Slides of my talk at VueConf China 2021",
+        "date": "2021-05-22T08:00:00.000Z",
+        "lang": "zh",
+        "type": "talk",
+        "recording": "!0",
+        "duration": "30min"
+      }
+    }
+  },
+  {
+    "name": "posts-color-scheme-for-vscode-ext",
+    "path": "/posts/color-scheme-for-vscode-ext",
+    "component": "gg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Color Scheme for VS Code",
+        "date": "2021-03-01T16:00:00.000Z",
+        "lang": "en",
+        "duration": "2min",
+        "type": "note"
+      }
+    }
+  },
+  {
+    "name": "posts-break-lines-in-js",
+    "path": "/posts/break-lines-in-js",
+    "component": "_g",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Break Lines in JS",
+        "date": "2023-02-10T16:00:00.000Z",
+        "lang": "en",
+        "duration": "2min",
+        "type": "note"
+      }
+    }
+  },
+  {
+    "name": "posts-bonjour-paris",
+    "path": "/posts/bonjour-paris",
+    "component": "yg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Bonjour Paris!",
+        "date": "2022-12-10T16:00:00.000Z",
+        "lang": "en",
+        "duration": "6min",
+        "image": "https://antfu.me/images/a-paris-1.jpg"
+      }
+    }
+  },
+  {
+    "name": "posts-binfe-2020-zh",
+    "path": "/posts/binfe-2020-zh",
+    "component": "vg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "import { reactive } from 'vue'",
+        "place": "滨江前端沙龙 2020",
+        "date": "2020-09-26T16:00:00.000Z",
+        "lang": "zh",
+        "type": "talk+blog",
+        "duration": "25min"
+      }
+    }
+  },
+  {
+    "name": "posts-async-with-composition-api",
+    "path": "/posts/async-with-composition-api",
+    "component": "wg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Async with Composition API",
+        "description": "Notes about the caveat when using async functions in Vue Composition API.",
+        "date": "2021-07-16T08:00:00.000Z",
+        "lang": "en",
+        "duration": "17min"
+      }
+    }
+  },
+  {
+    "name": "posts-animated-svg-logo",
+    "path": "/posts/animated-svg-logo",
+    "component": "bg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Animated SVG Logo",
+        "date": "2023-07-19T00:00:00.000Z",
+        "lang": "en",
+        "duration": "10min"
+      }
+    }
+  },
+  {
+    "name": "posts-ai-qrcode",
+    "path": "/posts/ai-qrcode",
+    "component": "Tg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Stylistic QR Code with Stable Diffusion",
+        "date": "2023-06-25T05:00:00.000Z",
+        "lang": "en",
+        "duration": "15min"
+      }
+    }
+  },
+  {
+    "name": "posts-ai-qrcode-refine",
+    "path": "/posts/ai-qrcode-refine",
+    "component": "Sg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Refining AI Generated QR Code",
+        "date": "2023-06-30T17:00:00.000Z",
+        "lang": "en",
+        "duration": "16min"
+      }
+    }
+  },
+  {
+    "name": "posts-ai-qrcode-101",
+    "path": "/posts/ai-qrcode-101",
+    "component": "Eg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Stable Diffusion QR Code 101",
+        "date": "2023-07-10T05:00:00.000Z",
+        "lang": "en",
+        "duration": "35min",
+        "tocAlwaysOn": "!0"
+      }
+    }
+  },
+  {
+    "name": "posts-about-yak-shaving",
+    "path": "/posts/about-yak-shaving",
+    "component": "xg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "About Yak Shaving",
+        "date": "2021-05-19T16:00:00.000Z",
+        "lang": "en",
+        "duration": "10min"
+      }
+    }
+  },
+  {
+    "name": "posts-about-yak-shaving-zh",
+    "path": "/posts/about-yak-shaving-zh",
+    "component": "$g",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "关于 Yak Shaving",
+        "date": "2021-05-19T16:00:00.000Z",
+        "lang": "zh",
+        "duration": "10min"
+      }
+    }
+  },
+  {
+    "name": "talks",
+    "path": "/talks",
+    "component": "Cg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Talks - Anthony Fu",
+        "display": "",
+        "plum": "!0"
+      }
+    }
+  },
+  {
+    "name": "streams",
+    "path": "/streams",
+    "component": "Pg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Streams - Anthony Fu",
+        "display": "",
+        "plum": "!0",
+        "items": [
+          {
+            "title": "用 Vue 写个扫雷吧！",
+            "date": "2022-03-09",
+            "path": "https://www.bilibili.com/video/BV1ia411b7jY",
+            "platform": "Bilibili",
+            "lang": "zh"
+          },
+          {
+            "title": "用 Vue 写个扫雷之二",
+            "date": "2022-03-12",
+            "path": "https://www.bilibili.com/video/BV15b4y1s7it",
+            "platform": "Bilibili",
+            "lang": "zh"
+          },
+          {
+            "title": "用 Canvas 做梅花生长动画",
+            "date": "2022-03-15",
+            "path": "https://www.bilibili.com/video/BV1wY411n7er",
+            "platform": "Bilibili",
+            "lang": "zh"
+          },
+          {
+            "title": "实现 UnoCSS 自动补全",
+            "date": "2022-03-15",
+            "path": "https://www.bilibili.com/video/BV1y3411W7YG",
+            "platform": "Bilibili",
+            "lang": "zh"
+          },
+          {
+            "title": "写个聪明的打字机",
+            "date": "2022-03-20",
+            "path": "https://www.bilibili.com/video/BV1bZ4y167gz",
+            "platform": "Bilibili",
+            "lang": "zh"
+          },
+          {
+            "title": "实现 Vite 插件 import.meta.glob",
+            "date": "2022-03-27",
+            "path": "https://www.bilibili.com/video/BV1ea411x7zm",
+            "platform": "Bilibili",
+            "lang": "zh"
+          },
+          {
+            "title": "Vue 全自动引入黑魔法",
+            "date": "2022-03-29",
+            "path": "https://www.bilibili.com/video/BV1L34y147jA",
+            "platform": "Bilibili",
+            "lang": "zh"
+          },
+          {
+            "title": "起飞！跨路由 Vue 组件动画实验",
+            "date": "2022-04-01",
+            "path": "https://www.bilibili.com/video/BV1na41147qR",
+            "platform": "Bilibili",
+            "lang": "zh"
+          },
+          {
+            "title": "差点坠机！跨路由 Vue 组件动画实验",
+            "date": "2022-04-05",
+            "path": "https://www.bilibili.com/video/BV1sa41147qH",
+            "platform": "Bilibili",
+            "lang": "zh"
+          },
+          {
+            "title": "Create with Anthony Fu - A World Clock EP1",
+            "platform": "YouTube",
+            "date": "2022-06-11",
+            "path": "https://www.youtube.com/watch?v=-EHoncCeg_Y",
+            "lang": "en"
+          },
+          {
+            "title": "Create with Anthony Fu - A World Clock EP2",
+            "platform": "YouTube",
+            "date": "2022-06-12",
+            "path": "https://www.youtube.com/watch?v=8vfDZqZLiG8",
+            "lang": "en"
+          },
+          {
+            "title": "Live AMA",
+            "platform": "YouTube",
+            "date": "2022-06-23",
+            "path": "https://www.youtube.com/watch?v=Am60EtlGm9Y",
+            "lang": "en"
+          },
+          {
+            "title": "读评论！AMA",
+            "date": "2022-06-23",
+            "path": "https://www.bilibili.com/video/BV11W4y167Uu",
+            "platform": "Bilibili",
+            "lang": "zh"
+          },
+          {
+            "title": "获取包的所有导出函数",
+            "date": "2022-06-28",
+            "path": "https://www.bilibili.com/video/BV1Z34y1H7fJ",
+            "platform": "Bilibili",
+            "lang": "zh"
+          },
+          {
+            "title": "VueUse 9.0 / Slidev / UnoCSS 一通乱播",
+            "date": "2022-07-08",
+            "path": "https://www.bilibili.com/video/BV1qB4y1i76x",
+            "platform": "Bilibili",
+            "lang": "zh"
+          },
+          {
+            "title": "开源探店第一期",
+            "date": "2022-09-19",
+            "path": "https://www.bilibili.com/video/BV1Bt4y1j7L5",
+            "platform": "Bilibili",
+            "lang": "zh"
+          },
+          {
+            "title": "开源探店第二期",
+            "date": "2022-10-09",
+            "path": "https://www.bilibili.com/video/BV1he4y1n7w8",
+            "platform": "Bilibili",
+            "lang": "zh"
+          },
+          {
+            "title": "Nuxt，进一步的开发者体验",
+            "date": "2023-02-13",
+            "path": "https://www.bilibili.com/video/BV1vx4y1V7VD",
+            "platform": "Bilibili",
+            "lang": "zh"
+          },
+          {
+            "title": "直播打工1 - Nuxt DevTools SEO 工具",
+            "date": "2023-05-05",
+            "path": "https://www.bilibili.com/video/BV1eh4y1J75z",
+            "platform": "Bilibili",
+            "lang": "zh"
+          },
+          {
+            "title": "Nuxt Playground 1 - Project Setup",
+            "date": "2023-11-21",
+            "path": "https://www.youtube.com/watch?v=49WXr6kVBVI&list=PL4ETc_mXFfxUGiY852jH3ctljnI2e9Rax",
+            "platform": "YouTube",
+            "lang": "en"
+          },
+          {
+            "title": "Nuxt Playground 2 - Nuxt Content & Resizable Panels",
+            "date": "2023-11-21",
+            "path": "https://www.youtube.com/watch?v=mDjI1uR-s-M&list=PL4ETc_mXFfxUGiY852jH3ctljnI2e9Rax",
+            "platform": "YouTube",
+            "lang": "en"
+          },
+          {
+            "title": "Nuxt Playground 3 - Pinia & Editor & Refactors",
+            "date": "2023-11-21",
+            "path": "https://www.youtube.com/watch?v=B7JJP-vgImM&list=PL4ETc_mXFfxUGiY852jH3ctljnI2e9Rax",
+            "platform": "YouTube",
+            "lang": "en"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "sponsors-list",
+    "path": "/sponsors-list",
+    "component": "Ag",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Sponsors - Anthony Fu",
+        "display": "Sponsors",
+        "subtitle": "Great thanks for all the Sponsors!",
+        "description": "Sponsors of Anthony Fu"
+      }
+    }
+  },
+  {
+    "name": "projects",
+    "path": "/projects",
+    "component": "kg",
+    "props": "!0"
+  },
+  {
+    "name": "podcasts",
+    "path": "/podcasts",
+    "component": "Rg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Podcasts - Anthony Fu",
+        "display": "",
+        "plum": "!0",
+        "items": [
+          {
+            "title": "Views on Vue #144 - Exploring Vitesse with Anthony Fu",
+            "date": "2021-03-02",
+            "path": "https://viewsonvue.com/144",
+            "radio": "!0"
+          },
+          {
+            "title": "Enjoy the Vue #62 - Shaving Yaks with Anthony Fu",
+            "date": "2021-05-24",
+            "path": "https://enjoythevue.io/episodes/62",
+            "radio": "!0"
+          },
+          {
+            "title": "Vue Shenzhen Meetup - Anthony Fu 线上访谈",
+            "date": "2021-11-02",
+            "path": "https://www.bilibili.com/video/BV1jL4y1q76J",
+            "lang": "zh",
+            "video": "!0"
+          },
+          {
+            "title": "ByteTalk #6 - 跟 Anthony Fu 聊聊全职开源和他的故事",
+            "date": "2021-12-09",
+            "path": "https://bytetalk.fm/posts/episode-6/",
+            "lang": "zh",
+            "radio": "!0"
+          },
+          {
+            "title": "JS Party #214 - Vitest && Slidev",
+            "date": "2022-02-17",
+            "path": "https://changelog.com/jsparty/214",
+            "radio": "!0"
+          },
+          {
+            "title": "React Wednesdays - Vite and Its Ecosystem",
+            "date": "2022-02-25",
+            "path": "https://www.youtube.com/watch?v=ivmuJ9L_NnQ",
+            "video": "!0"
+          },
+          {
+            "title": "devtools.fm #25 - Vue, Vite, Vitest, UnoCSS",
+            "date": "2022-03-04",
+            "path": "https://devtools.fm/episode/25",
+            "video": "!0",
+            "radio": "!0"
+          },
+          {
+            "title": "funnyCoder #4 - Vue 和 NuxtLabs 核心成员 Anthony Fu 的开源人生",
+            "date": "2022-03-07",
+            "path": "https://www.bilibili.com/video/BV1eS4y1S7zB",
+            "lang": "zh",
+            "video": "!0"
+          },
+          {
+            "title": "模拟面试 - 我看你Vue写的挺好的，10K五险一金考虑一下",
+            "date": "2022-04-15",
+            "path": "https://www.bilibili.com/video/BV1TY4y1p783",
+            "lang": "zh",
+            "video": "!0"
+          },
+          {
+            "title": "模拟面试 - TS 体操 TwoSum",
+            "date": "2022-04-18",
+            "path": "https://www.bilibili.com/video/BV1KS4y1A7hS",
+            "lang": "zh",
+            "video": "!0"
+          },
+          {
+            "title": "Vite 3 Announcement with the Team",
+            "date": "2022-07-23",
+            "path": "https://www.youtube.com/watch?v=6tSqIW2ds1Y",
+            "lang": "en",
+            "video": "!0"
+          },
+          {
+            "title": "PodRocket - Vitest and VueUse with Anthony Fu",
+            "date": "2022-09-09",
+            "path": "https://podrocket.logrocket.com/vitest-and-vueuse",
+            "lang": "en",
+            "radio": "!0"
+          },
+          {
+            "title": "Akamai Developers Edge S3 - Sharing Code with Open Source",
+            "date": "2022-10-06",
+            "path": "https://www.youtube.com/watch?v=lhyjPYodG4s",
+            "lang": "en",
+            "video": "!0"
+          },
+          {
+            "title": "Learn with Jason - Fast Unit Testing With Vitest",
+            "date": "2023-02-02",
+            "path": "https://www.learnwithjason.dev/fast-unit-testing-with-vitest",
+            "lang": "en",
+            "video": "!0"
+          },
+          {
+            "title": "PodRocket - Developer Experience with Nuxt",
+            "date": "2023-03-22",
+            "path": "https://podrocket.logrocket.com/dev-experience-in-nuxt",
+            "lang": "en",
+            "radio": "!0"
+          },
+          {
+            "title": "Teach Kelvin Your Thing - WTF is UnoCSS",
+            "date": "2023-04-10",
+            "path": "https://youtu.be/nHag_UhwORY",
+            "lang": "en",
+            "video": "!0"
+          },
+          {
+            "title": "Mike Cheng - 從剛畢業到開源專案的辛酸血淚史",
+            "date": "2023-05-07",
+            "path": "https://www.youtube.com/watch?v=FFDMsoVG3R8",
+            "lang": "zh",
+            "video": "!0"
+          },
+          {
+            "title": "TechniCality - Anthony Fu",
+            "date": "2023-07-22",
+            "path": "https://fm.cali.so/64bb61a2d0844ea8123acc7f",
+            "lang": "zh",
+            "video": "!0",
+            "radio": "!0"
+          },
+          {
+            "title": "Web Worker - 和 Anthony Fu 聊技术开源、共建协作和前端思考",
+            "date": "2023-10-20",
+            "path": "https://podcast.webworker.tech/38",
+            "lang": "zh",
+            "radio": "!0"
+          },
+          {
+            "title": "Vitest with Anthony Fu - At Artem's",
+            "date": "2024-02-14",
+            "path": "https://youtu.be/5y8pgwd4Des",
+            "video": "!0"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "notes",
+    "path": "/notes",
+    "component": "Og",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Notes - Anthony Fu",
+        "plum": "!0",
+        "display": ""
+      }
+    }
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "lm",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Anthony Fu",
+        "description": "Anthony Fu's Portfolio",
+        "image": "https://antfu.me/og.png",
+        "plum": "!0"
+      }
+    }
+  },
+  {
+    "name": "giving-talks",
+    "path": "/giving-talks",
+    "component": "Lg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Giving Talks - Anthony Fu",
+        "display": ""
+      }
+    }
+  },
+  {
+    "name": "demos",
+    "path": "/demos",
+    "component": "Mg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Demos - Anthony Fu",
+        "display": "Demos",
+        "subtitle": "Demonstrations for projects I am working on from Tweets",
+        "description": "Demonstrations for projects I am working on from Tweets"
+      }
+    }
+  },
+  {
+    "name": "chat",
+    "path": "/chat",
+    "component": "Ig",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Let's Chat - Anthony Fu",
+        "display": "Let's Chat!",
+        "image": "https://antfu.me/og-chat.png"
+      }
+    }
+  },
+  {
+    "name": "chat-zh",
+    "path": "/chat-zh",
+    "component": "Dg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "和 Anthony Fu 聊聊天！",
+        "display": "聊聊天！",
+        "image": "https://antfu.me/og-chat.png"
+      }
+    }
+  },
+  {
+    "name": "bookmarks",
+    "path": "/bookmarks",
+    "component": "Vg",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {
+        "title": "Bookmarks - Anthony Fu",
+        "display": "Bookmarks",
+        "subtitle": "Some of my favorite websites/tools with excellent design and UX that I highly recommend"
+      }
+    }
+  },
+  {
+    "name": "404",
+    "path": "/:404(.*)*",
+    "component": "Ng",
+    "props": "!0",
+    "meta": {
+      "frontmatter": {}
+    }
+  }
+]

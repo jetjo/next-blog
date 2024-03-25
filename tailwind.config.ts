@@ -1,6 +1,18 @@
 import type { Config } from "tailwindcss";
+// import { addDynamicIconSelectors } from "@iconify/tailwind";
 
 const config: Config = {
+  darkMode: [
+    "selector",
+    '[theme="dark"]',
+    // "@media (prefers-color-scheme: dark) { &:not(.light *) }",
+    // "variant",
+    // [
+    //   '[data-mode="dark"]',
+    //   "@media (prefers-color-scheme: dark) { &:not(.light *) }",
+    //   "&:is(.dark *)",
+    // ],
+  ],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,6 +27,9 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // Iconify plugin
+    // addDynamicIconSelectors({ prefix: "ri" }),
+  ],
 };
 export default config;

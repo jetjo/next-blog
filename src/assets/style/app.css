@@ -1,0 +1,37 @@
+
+.flex,[flex=""],[flex~="~"] {
+    display: flex
+}
+
+.inline-flex,[inline-flex=""] {
+    display: inline-flex
+}
+
+.flex-1,[flex-1=""] {
+    flex: 1 1 0%
+}
+
+.flex-auto,[flex-auto=""] {
+    flex: 1 1 auto
+}
+
+.flex-none,[flex-none=""] {
+    flex: none
+}
+
+.grow {
+    flex-grow: 1
+}
+
+[flex~=col] {
+    flex-direction: column
+}
+
+[flex~=wrap] {
+    flex-wrap: wrap
+}
+
+.table {
+    display: table
+}
+
