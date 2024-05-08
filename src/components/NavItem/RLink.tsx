@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import _Link from "next/link";
 
 interface LinkProps {
@@ -8,15 +9,17 @@ interface LinkProps {
 }
 
 // prettier-ignore
-export default function RLink({ Link, Icon, mode="auto", ...props }: LinkProps) {
+export default function RLink({ Link, Icon, mode = "auto", ...props }: LinkProps) {
   const Lk: any = Link || _Link;
   // prettier-ignore
   const titleClass = mode === "auto" ? "hidden md:inline-block" : "inline-block";
   const iconClass = mode === "auto" ? `inline-block md:hidden` : "inline-block";
   return (
-    <Lk {...props}>
-      {mode !== "icon" && <span className={titleClass}>{props.title}</span>}
-      {mode !== "text" && <i className={iconClass}>{Icon && <Icon />}</i>}
-    </Lk>
+    < >
+      {mode !== "icon" && <Lk className={clsx(titleClass, 'align-middle text-2xl')} {...props}>{props.title}</Lk>}
+      {mode !== "text" && <Lk className={clsx(iconClass, 'align-middle text-2xl')} {...props}>{Icon && <i>
+        <Icon />
+      </i>}</Lk>}
+    </>
   );
 }

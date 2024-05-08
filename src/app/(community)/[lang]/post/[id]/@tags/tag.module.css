@@ -1,0 +1,155 @@
+.tagBox {
+    border: 1px solid var(--common-border-color);
+    border-radius: .25em;
+    padding: .5em 0;
+    margin-top: 3em;
+    padding-bottom: 1em;
+}
+
+.tagBox .header {
+    /* font-size: .875rem; */
+    /* margin: 0 -.5em; */
+    margin-bottom: 1em;
+    padding: .5em 1em;
+    border-bottom: 1px solid var(--common-border-color);
+    border-top: none;
+}
+
+.tagBox .editBtnInHead {
+    position: relative;
+    top: .2em;
+    cursor: pointer;
+    padding: .2em;
+    border-radius: .25em;
+}
+
+.tagBox .tagBtn {
+    border-radius: .125em;
+    /* padding: 0 .625em; */
+    border-color: var(--common-border-color);
+}
+
+.ediTagForm,
+.dialogHeader {
+    padding: 0 2em;
+    border-radius: 1em;
+    --algin-font-size: .75em;
+    --algin-padding-right: 3em;
+}
+
+.dialogHeader {
+    margin-bottom: 2em;
+}
+
+.ediTagForm fieldset {
+    border: 1px dashed rgba(150, 149, 149, 0.646);
+    border-radius: .25em;
+    color: rgb(117, 121, 123);
+}
+
+.ediTagForm .actionBox,
+.ediTagForm fieldset {
+    font-size: var(--algin-font-size);
+    padding: 1.5em var(--algin-padding-right);
+    border-radius: .375em;
+}
+
+.ediTagForm .actionBox {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.actionBox {
+    margin-top: -1em;
+}
+
+.ediTagForm fieldset legend {
+    padding: 0 .25em;
+}
+
+.ediTagForm input {
+    margin: .5em 0;
+    padding: .5em .25em;
+    border-radius: .25em;
+    border: 1px solid var(--common-border-color);
+}
+
+.ediTagForm input:focus-visible {
+    outline: none;
+    border-color: skyblue;
+}
+
+.ediTagForm .tagInput {
+    border: none;
+    border-bottom: 1px solid gainsboro;
+    margin: 0;
+    border-radius: 0;
+}
+
+.ediTagForm .tagInputBtn {
+    border: none;
+    box-shadow: none;
+    margin-left: .25em;
+    border-radius: 0;
+    font-size: 1.75em;
+    padding: .25em;
+    margin-bottom: .1em;
+}
+
+.ediTagForm .tagInputBtn:hover {
+    box-shadow: none;
+    background-color: transparent;
+    color: blue;
+}
+
+.ediTagForm .tagInputBtn:active {
+    background-color: var(--btn-bg-confirm-color)
+}
+
+.ediTagForm label {
+    font-size: 1.314em;
+    margin-right: .25em;
+    color: hsl(0, 0%, 39%);
+    cursor: pointer;
+    min-width: 7em;
+}
+
+.ediTagForm label:hover {
+    /* font-weight: bold; */
+    transform: scale3d(1.1, 1.1, 1.1);
+}
+
+.ediTagForm label:has(input:checked) {
+    color: blue;
+}
+
+.ediTagForm p[hint] {
+    color: red;
+    font-style: italic;
+    visibility: hidden;
+    font-size: .75em;
+}
+
+.ediTagForm button {
+    border-radius: 5px;
+    cursor: pointer;
+    padding: .5em 1em;
+    border: 1px solid var(--common-border-color);
+    box-shadow: 2px 3px 6px var(--btn-bg-cancel-color);
+}
+
+.ediTagForm button[value="confirm"] {
+    box-shadow: 2px 3px 6px var(--btn-bg-confirm-color);
+}
+
+.ediTagForm button:hover {
+    background-color: var(--btn-bg-cancel-color)
+}
+
+.ediTagForm button[value="confirm"]:hover {
+    background-color: var(--btn-bg-confirm-color)
+}
+
+.ediTagForm button:active {
+    box-shadow: none;
+}

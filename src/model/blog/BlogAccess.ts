@@ -3,9 +3,13 @@ import { ObjectId } from "@/db";
 export const BlogAccess = {
   userId: {
     type: ObjectId,
+    unique: false,
+    ref: "User",
   },
   blogId: {
     type: ObjectId,
+    unique: false,
+    ref: "Blog",
   },
   access: {
     type: String,
@@ -13,6 +17,8 @@ export const BlogAccess = {
   },
   commentId: {
     type: ObjectId,
+    unique: false,
+    ref: "Comment",
   },
   rate: {
     type: Number,
@@ -22,7 +28,7 @@ export const BlogAccess = {
   latestAccess: {
     type: Number,
   },
-};
+} as const;
 
 export const option = {
   timestamps: true,

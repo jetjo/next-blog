@@ -1,0 +1,237 @@
+.article,
+.toc {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--foreground);
+}
+
+.article {
+    /* letter-spacing: .0333333em;
+    word-spacing: .05em; */
+    letter-spacing: .015em;
+    word-spacing: .025em;
+}
+
+.article [mdx-wrapper] hr {
+    display: none;
+}
+
+/* #region 段落 */
+.article [mdx-wrapper] p:not(:where([class~=not-prose] *)) {
+    margin-bottom: 1.25em;
+}
+
+.article [mdx-wrapper]>p:not(:where([class~=not-prose] *)) {
+    /* text-indent: .5em; */
+    padding-left: .2em;
+}
+
+/* #endregion */
+
+/* #region 文章内的链接 */
+.article [mdx-wrapper] a:not(:where([class~=not-prose] *)) {
+    color: rgb(37 99 235);
+    touch-action: pan-y;
+    transition: color .2s ease;
+}
+
+.article [mdx-wrapper] a:not(:where([class~=not-prose] *)):hover {
+    color: rgb(14 165 233);
+}
+
+.article [mdx-wrapper] a code:not(pre code):is(:hover, :focus) {
+    color: rgb(14 165 233);
+}
+
+/* #endregion */
+
+
+/* #region 文章内的列表 */
+
+.article [mdx-wrapper] ul:not(:where([class~=not-prose] *)) {
+    list-style: none;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding-left: 0;
+}
+
+.article [mdx-wrapper] ul li:not(:where([class~=not-prose] *)) {
+    padding-left: 1.75em;
+    position: relative;
+    margin-bottom: .5em;
+}
+
+.article [mdx-wrapper] ul li:not(:where([class~=not-prose] *))::before {
+    content: "";
+    width: .525em;
+    height: .125em;
+    position: absolute;
+    top: calc(.875em - .0625em);
+    left: .525em;
+    border-radius: 999px;
+    background-color: #cbd5e1;
+}
+
+/* #endregion */
+
+
+/* #region 不在`pre`内的行内`code` */
+.article [mdx-wrapper] code:not(pre code) {
+    margin: 0;
+    /* font-size: 1.1em; */
+    line-height: 1.3;
+    /* display: inline-block; 造成包含`code`的`h2\h3`的图标显示异常 */
+    display: inline;
+    padding: .12em .25em;
+    color: var(--inline-code-color);
+    background-color: var(--inline-code-bg);
+    border-radius: .25em;
+}
+
+/* #endregion */
+
+
+/* #region 文章内的`blockquote` */
+.article [mdx-wrapper] blockquote {
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+    border: 1px solid var(--common-border-color);
+    border-radius: .5em;
+    quotes: auto;
+    font-size: .875em;
+    line-height: 1.5;
+    padding: 0.86em .5em;
+    padding-left: 1em;
+}
+
+.article [mdx-wrapper] blockquote p {
+    margin-bottom: .5em;
+    line-height: 1.5;
+}
+
+.article [mdx-wrapper] blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.article [mdx-wrapper] blockquote ul {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+/* #endregion */
+
+
+/* #region 标题 */
+
+.article [mdx-wrapper] :where(h1, h2, h3, h4, h5, h6) {
+    color: var(--foreground-h2);
+    font-weight: bold;
+    line-height: 1.333333;
+    letter-spacing: -.01em;
+    --heading-font-size: 1rem;
+    font-size: var(--heading-font-size);
+}
+
+.article [mdx-wrapper] :where(h1) {
+    font-size: calc(var(--heading-font-size) * 64 / 27);
+}
+
+.article [mdx-wrapper] h1:not(:where([class~=not-prose])) {
+    margin-bottom: .888888em;
+}
+
+/* #region h2 */
+
+/* #region toc h2 */
+.toc h2 {
+    font-size: 1.2em;
+    line-height: 1.2;
+    letter-spacing: .0333333em;
+}
+
+/* #endregion */
+
+.article [mdx-wrapper] :where(h2) {
+    font-size: calc(var(--heading-font-size) * 16 / 9);
+}
+
+.article h2:not(:first-child) {
+    margin: 1em 0 .875em;
+    border-top: 1px solid var(--common-border-color);
+    padding-top: 1.375em;
+}
+
+/* #endregion */
+
+.article [mdx-wrapper] :where(h3) {
+    font-size: calc(var(--heading-font-size) * 4 / 3);
+}
+
+.article [mdx-wrapper] h3 {
+    margin-top: 1.6em;
+    line-height: 1.6;
+}
+
+.article [mdx-wrapper] [h-link] {
+    display: none;
+}
+
+/* #region 2,3级标题前面的链接图标 */
+.article [mdx-wrapper] :where(h2, h3, h4, h5, h6):has(a [h-link]) {
+    position: relative;
+    /* overflow-x: visible; 图标不显示 */
+    /* 不是滚动盒子(`scroll container`) */
+    overflow: visible;
+    text-indent: -1em;
+}
+
+/* #region 默认隐藏, hover显示; inline-flex; font.875em */
+.article [mdx-wrapper] :where(h2, h3, h4, h5, h6) [h-link] {
+    visibility: hidden;
+    display: inline-flex;
+    font-size: .875em;
+    vertical-align: middle;
+}
+
+.article [mdx-wrapper] :where(h2, h3, h4, h5, h6):hover [h-link] {
+    visibility: visible;
+}
+
+/* #endregion */
+
+.article [mdx-wrapper] :where(h2, h3, h4, h5, h6):target {
+    text-decoration: underline;
+}
+
+/* #endregion */
+
+/* #endregion */
+
+
+/* #region 代码块 */
+.article :where(div:has(>pre>code)) {
+    background: var(--code-block-bg-color);
+}
+
+.article [mdx-wrapper] :where(div, p):has(pre code) .filename {
+    word-wrap: normal;
+}
+
+/* #endregion */
+
+/* #region toc list item */
+.toc a:not(.button) {
+    border-left: 2px solid var(--common-border-color);
+    /* color: var(--text-secondary); */
+    text-decoration: none;
+    font-size: .833em;
+}
+
+.toc a:not(.button)[aria-current]:not([aria-current=""]):not([aria-current=false]) {
+    background-color: var(--background-toc-active);
+    border-left: 2px solid var(--border-color-toc-active);
+    /* color: var(--text-primary); */
+    font-weight: 600;
+}
+
+/* #endregion */

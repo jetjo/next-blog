@@ -2,42 +2,252 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
+main {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+body>* {
+  /* 水平方向是`scroll container`, 而垂直方向不是! */
+  overflow: hidden visible;
+}
+
+body,
+main {
+  /* width和height的默认值最好别管 */
+  /* width: auto;
+  height: auto; */
+  /* 不作为`scroll container` */
+  overflow: visible;
+  display: block;
+  position: static;
+  /* 这些属性本来就是默认继承的 */
+  /* font-size: inherit;
+  color: inherit;
+  line-height: inherit; */
+}
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --bg: #fffffa;
-  --bg-dark: #0909093b;
-  --bg-img-url: url("https://www.transparenttextures.com/patterns/green-dust-and-scratches.png");
-  font-size: large;
+  /* 水平和垂直方向都是[`scroll container`](https://developer.mozilla.org/en-US/docs/Glossary/Scroll_container);
+  水平方向超出隐藏,不能滚动显示, 但仍然可以通过调用`scrollTo`等方法显示;
+  垂直方向超出显示滚动条. */
+  overflow: hidden auto;
+  /* 自适应字体尺寸 */
+  font-size: calc(.8em + .333333vw);
+  /* 自适应字体颜色 */
+  color: var(--foreground);
+  line-height: 1.5;
+
+  /* #region 滚动表现 */
+  scroll-snap-type: y proximity;
+  /* 因为顶部导航栏是固定的,高度大概`4.5em土.7px`,当点击一个锚点时, 锚点会滚到最顶部,导致其被导航栏遮盖. */
+  scroll-padding: 4.5em;
+  scroll-behavior: smooth;
+  /* #endregion */
+
+  touch-action: manipulation;
 }
 
-:root[theme="dark"] {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
-  --bg-img-url: url("https://www.transparenttextures.com/patterns/white-diamond.png");
+*,
+::before,
+::after {
+  --common-border-color: inherit;
+  --foreground: inherit;
+  border-color: var(--common-border-color);
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([theme*="light"]) {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-    --bg-img-url: url("https://www.transparenttextures.com/patterns/white-diamond.png");
-  }
+/* :root, */
+:root[theme='light'],
+:root:has(#-theme-flag___[theme='light']) {
+  --body-bg: transparent;
+  --main-bg-color: #fff9;
+  --body-theme-bg-img: url('../images/docs@30.8b9a76a2.avif');
+
+  /* 纯透明会导致浏览器开发者工具无法提供文字对比度 */
+  /* --main-nav-bg-color: hsl(60deg 100% 50% / 0%); */
+  --main-nav-bg-color: hwb(60 100% 0% / 0.75);
+  --common-border-color: hsl(217.89deg 18.1% 79.41%);
+  --code-header-bg: hsl(130 9% 95% / 1);
+  --code-block-bg-color: hsl(55deg 50% 97% / 60%);
+  --inline-code-color: hsl(200deg 33.61% 47.25%);
+  /* text-green-400 */
+  --pass-icon-color: hsl(141.89deg 69.16% 58.04%);
+  /* text-red-500 */
+  --not-pass-icon-color: hsl(0deg 84.24% 60.2%);
+
+  --prose-th-borders: hsl(220 13% 81% / 1);
+  --prose-td-borders: hsl(220 13% 81% / 1);
+  --foreground: hsl(228 11% 20%);
+  --foreground-h2: hsl(228 11% 5%);
+  --inline-code-bg: hsl(220deg 8.94% 46.08% / .11);
+
+  --background-toc-active: rgb(254 243 199);
+  --border-color-toc-active: rgb(245 158 11);
+
+  --btn-bg-confirm-color: hsl(88deg 51.72% 94.31%);
+  --btn-bg-cancel-color: hsl(0 0% 95% / 1);
 }
 
-body {
-  transition: all 1.5s;
-  color: rgb(var(--foreground-rgb));
-  background-color: light-dark(var(--bg), var(--bg-dark));
-  background-image: var(--bg-img-url);
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+:root[theme='dark'],
+:root:has(#-theme-flag___[theme='dark']) {
+  /* --body-bg: hsl(200deg 50% 3% / 88%); */
+  /* --body-bg: hwb(222.22deg 5.88% 83.53% / 94%); */
+  --body-bg: hwb(222.22deg 5.88% 83.53%);
+  /* bg-sky-950/11 */
+  /* --main-bg-color: #082f4911; */
+  --main-bg-color: hwb(222deg 1% 93% / 55%);
+  --body-theme-bg-img: url('../images/docs-dark@30.1a9f8cbf.avif');
+
+  --main-nav-bg-color: hsl(260deg 10% 10% / 75%);
+  /* --common-border-color: hsl(270 11% 44% / 1); */
+  /* 暗紫 */
+  --common-border-color: hwb(270 25% 80% / 1);
+  --code-header-bg: hsl(230deg 13.4% 17.51%);
+  /* bg-stone-950 */
+  --code-block-bg-color: hsl(20deg 14.29% 4.12%);
+  --inline-code-color: hsl(200 46% 61% / 1);
+  /* text-green-500 */
+  --pass-icon-color: hsl(142.09deg 70.56% 45.29%);
+  /* text-red-600 */
+  --not-pass-icon-color: hsl(0deg 72.22% 50.59%);
+
+  --prose-th-borders: hsl(210 2% 55% / 1);
+  --prose-td-borders: hsl(200 3% 40% / 1);
+  --foreground: hsl(210 40% 93%);
+  --foreground-h2: hsl(210 40% 98%);
+  --inline-code-bg: hsl(228 11% 5%);
+
+  --background-toc-active: rgb(67 56 202);
+  ;
+  --border-color-toc-active: rgb(129 140 248);
+}
+
+#-theme-flag___ {
+  background-image: var(--body-theme-bg-img);
+  /* background-position: center; */
+  background-position: top right;
+  background-repeat: no-repeat;
+  /* background-size: contain; */
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+input,
+.form-input {
+  /* padding: 1em 3em; */
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+input,
+.form-input,
+[type="radio"],
+[type="checkbox"],
+[type="radio"].form-radio,
+[type="checkbox"].form-checkbox {
+  margin: 0 .25em;
+  border-radius: .5em;
+  transition: opacity 1s ease 0s;
+}
+
+[type=file] {
+  width: 0 !important;
+  /* 不是滚动盒子, 并且超出的内容没有任何办法显示 */
+  overflow: clip !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  outline: none !important;
+  appearance: none !important;
+  display: block !important;
+  line-height: 0 !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+  padding-block: 0 !important;
+  padding-inline: 0 !important;
+}
+
+:focus-visible,
+:-webkit-autofill,
+:-webkit-autofill:hover,
+:-webkit-autofill:focus,
+:-webkit-autofill:focus-visible,
+:autofill,
+:autofill:hover,
+:autofill:focus,
+:autofill:focus-visible {
+  /* border: none; */
+  outline: none !important;
+  appearance: none !important;
+  -webkit-text-fill-color: var(--foreground-h2) !important;
+  color: var(--foreground-h2) !important;
+  -webkit-box-shadow: 0 0 0 1000px var(--body-bg) inset !important;
+  box-shadow: 0 0 0 1000px var(--body-bg) inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+@layer base {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans;
+  }
+
+  code,
+  kbd,
+  samp,
+  pre {
+    font-size: 1em;
+    @apply font-mono;
+    /* font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', 'monospace'; */
+    /* font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; */
+  }
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  /* NOTE: note/样式问题-001.png */
+  /* display: flex; */
+  white-space: pre-wrap;
+  min-width: 0;
+  max-width: 100%;
+  /* 不能手动滚动的滚动盒子 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* font-size: 1.875em;
+  line-height: 1.111111; */
+  overflow-wrap: break-word;
+  margin: 0 auto .666666em;
+  word-break: break-word;
+}
+
+h1 {
+  display: none;
+}
+
+dialog {
+  border-radius: 1em;
+  padding: 1em 2em;
+  min-width: none;
+  width: 48rem;
+  overflow: hidden;
+  /* max-height: 100vh; */
+}
+
+main {
+  box-shadow: 10px 0px 200px 0px var(--main-bg-color), -10px 0px 200px 0px var(--main-bg-color);
 }

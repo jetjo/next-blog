@@ -1,40 +1,49 @@
-.container {
-  padding: 0.35em 0;
-  margin-bottom: 0.3em;
-  /* display: block; */
+.blogListItem {
+  margin: 0.5em 0 1.5em;
+  font-size: 1.1rem;
+  transform-origin: center center;
 }
 
-.container:link {
+.blogListItem:link {
+  opacity: 0.8;
+  transform: scale3d(1, 1, 1);
+}
+
+.blogListItem:visited {
   opacity: 0.7;
   transform: scale3d(1, 1, 1);
 }
 
-.container:visited {
-  opacity: 0.7;
-  transform: scale3d(1, 1, 1);
-}
-
-.container:hover {
+.blogListItem:hover {
   opacity: 1;
   transform: scale3d(1, 1, 1);
 }
 
-.container:active {
+.blogListItem:active {
   opacity: 1;
   transform: scale3d(1.2, 1.2, 1);
 }
 
-.title {
+.blogListItem [blog-title] {
   font-size: 1.1em;
 }
 
-.date {
+.blogListItem [blog-title]+[icon-go] {
+  --un-icon: url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 32 32' display='inline-block' height='1.2em' width='1.2em' vertical-align='text-bottom' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M10 6v2h12.59L6 24.59L7.41 26L24 9.41V22h2V6z'/%3E%3C/svg%3E");
+  -webkit-mask: var(--un-icon) no-repeat;
+  mask: var(--un-icon) no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  background-color: currentColor;
+  color: inherit;
+  display: inline-block;
+  height: 1.2em;
+  width: 1.2em;
+  vertical-align: text-bottom;
+}
+
+.blogListItem :where([publish-date], [read-time]) {
   opacity: 0.6;
   font-size: 0.8em;
   font-weight: 300;
-
-  margin-left: 0.35em;
-  /* margin-top: 0.15em; */
-
-  min-width: 8em;
 }

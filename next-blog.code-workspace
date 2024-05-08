@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "./../jetjo-first-blog/data/blogs"
+		}
+	],
+	"settings": {
+		"explorerExclude.backup": {},
+		"cSpell.words": [
+			"recma"
+		]
+	}
+}

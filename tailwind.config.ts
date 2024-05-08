@@ -1,17 +1,12 @@
 import type { Config } from "tailwindcss";
+import TWForms from '@tailwindcss/forms';
 // import { addDynamicIconSelectors } from "@iconify/tailwind";
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 const config: Config = {
   darkMode: [
     "selector",
-    '[theme="dark"]',
-    // "@media (prefers-color-scheme: dark) { &:not(.light *) }",
-    // "variant",
-    // [
-    //   '[data-mode="dark"]',
-    //   "@media (prefers-color-scheme: dark) { &:not(.light *) }",
-    //   "&:is(.dark *)",
-    // ],
+    '[theme="dark"]'
   ],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -20,6 +15,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'jj-sky-750': '#0097e3'
+      },
+      fontFamily: {
+        sans: ['Optimistic Display', 'var(--font-inter)', 'var(--font-noto-sans-sc)', ...defaultTheme.fontFamily.sans],
+        mono: ['var(--font-robot-mono)', ...defaultTheme.fontFamily.mono],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -28,6 +30,7 @@ const config: Config = {
     },
   },
   plugins: [
+    TWForms,
     // Iconify plugin
     // addDynamicIconSelectors({ prefix: "ri" }),
   ],

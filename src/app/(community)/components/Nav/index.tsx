@@ -1,5 +1,3 @@
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconContext } from "react-icons";
 import Link from "next/link";
 import RLink from "@/components/NavItem/RLink";
 import {
@@ -9,18 +7,25 @@ import {
   RiChat1Line,
   RiGithubLine,
   RiUserHeartLine,
+  RiArrowUpLine,
 } from "react-icons/ri";
 import ThemeSelectorLink from "./client/ThemeSelectorLink";
-import ThemeSelectorIcon from "./client/ThemeSelectorIcon";
-import cStyle from "./CLink.module.css";
-
-const CLink = ({ children, href, target, ...props }: any) => (
-  <Link href={href} target={target || "_self"} {...props}>
-    <h2 className={`hover:scale-110 ${cStyle.h2}`}>{children}</h2>
-  </Link>
-);
+import GotoTop from "./client/GotoTop";
+import clsx from "clsx";
 
 const items = [
+  {
+    title: "Toggle Color Theme",
+    href: "javascript:void(0)",
+    mode: "icon" as const,
+    Link: ThemeSelectorLink, //.bind(null, CLink),
+  },
+  {
+    title: "Goto Top",
+    href: "javascript:void(0)",
+    mode: "icon" as const,
+    Link: GotoTop, //.bind(null, CLink),
+  },
   {
     title: "Home",
     href: "/",
@@ -36,40 +41,38 @@ const items = [
     href: "/demos",
     Icon: () => <RiScreenshotLine />,
   },
-  {
-    title: "Contact",
-    href: "/contact",
-    Icon: () => <RiChat1Line />,
-    mode: "icon" as const,
-  },
-  {
-    title: "Github",
-    href: "https://github.com/jetjo",
-    Icon: () => <RiGithubLine />,
-    mode: "icon" as const,
-    target: "_blank",
-  },
-  {
-    title: "Toggle Color Theme",
-    href: "javascript:void(0)",
-    Icon: ThemeSelectorIcon,
-    mode: "icon" as const,
-    Link: ThemeSelectorLink, //.bind(null, CLink),
-  },
+  // {
+  //   title: "Contact",
+  //   href: "/contact",
+  //   Icon: () => <RiChat1Line />,
+  //   mode: "icon" as const,
+  // },
+  // {
+  //   title: "Github",
+  //   href: "https://github.com/jetjo",
+  //   Icon: () => <RiGithubLine />,
+  //   mode: "icon" as const,
+  //   target: "_blank",
+  // },
+  // ...(LinkItemsDev as any[]),
 ];
-
-items.map((item) => (item.Link ||= CLink));
 
 export default function Nav() {
   return (
-    <div className="flex justify-between p-8">
+    <div className="before:block before:absolute before:top-0 before:bottom-0 before:-z-[1] before:w-full before:backdrop-blur before:backdrop-saturate-200 px-8 flex justify-between items-center border-b dark:border-b-0 border-[--common-border-color] bg-[--main-nav-bg-color] ">
       <div className={`inline-block logo`}></div>
       <nav
-        className={`inline-flex justify-end gap-3.5 text-gray-700 dark:text-sky-600 hover:text-indigo-700 hover:dark:text-sky-400`}
+        className={clsx(` inline-flex justify-end items-center gap-3.5 text-lg font-semibold py-[1em] `, ` text-slate-700 dark:text-slate-200 `)}
       >
-        {items.map((item) => (
-          <RLink key={item.title} {...item} />
-        ))}
+        <ul className={clsx(`flex space-x-8 items-center`)}>
+          {items.map((item) => (
+            <li
+              key={item.title}
+              className={clsx(`hover:text-jj-sky-750 dark:hover:text-sky-400  active:text-opacity-100`)}>
+              <RLink {...item} />
+            </li>
+          ))}
+        </ul>
       </nav>
     </div>
   );

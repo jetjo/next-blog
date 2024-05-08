@@ -3,6 +3,10 @@ export const User = {
     type: String,
     unique: true,
   },
+  email: {
+    type: String,
+    unique: true,
+  },
   password: String,
   age: Number,
   city: String,

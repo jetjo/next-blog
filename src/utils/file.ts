@@ -1,10 +1,11 @@
 import { open, writeFile } from "fs/promises";
 import fs from "node:fs/promises";
+import { read, write } from "to-vfile";
 
-export async function saveFile(file: Blob, path: string) {
+export async function saveFile(file: Blob | string, path: string) {
   //   const controller = new AbortController();
   //   const signal = controller.signal;
-  const data = new Uint8Array(await file.arrayBuffer());
+  const data = typeof file === 'string' ? file : new Uint8Array(await file.arrayBuffer());
   await writeFile(path, data); //, { signal });
 }
 

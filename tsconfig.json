@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "lib": [
-      "dom",
+      "dom", // dom中定义了全局变量origin, 如果局部使用的origin不是这个,却又没有定义,会导致ts无法发现这个错误!!!
       "dom.iterable",
       "esnext"
     ],
@@ -9,6 +9,7 @@
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
+    "noImplicitAny": false,
     "esModuleInterop": true,
     "target": "ESNext",
     "module": "esnext",
@@ -16,7 +17,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true,
+    "incremental": false,
+    // "sourceMap": true,
     "plugins": [
       {
         "name": "next"
@@ -25,20 +27,29 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@/fonts": [
+        "./src/assets/fonts"
       ]
     },
     "types": [
       "node",
       "react",
       "react-dom",
-      "mongoose"
-    ]
+      "mongoose",
+      "katex",
+      "redis"
+    ],
   },
   "include": [
+    "global.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "src/app/(community)/[lang]/post/[id]/_components/icons/Cross.tsx",
+    "src/app/(community)/[lang]/post/[id]/_components/icons/Check.tsx",
+    "src/app/(community)/[lang]/post/[id]/page.tsx"
   ],
   "exclude": [
     "node_modules"

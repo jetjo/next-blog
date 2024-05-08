@@ -1,18 +1,21 @@
 import BackgroundYear from "@/components/BackgroundYear/BackgroundYear";
-import { getLatestPopulatePostGroupByYear } from "../actions";
+import { getLatestPopularPostGroupByYear } from "../actions";
 import BlogItem from "./blog-item";
+import { isSystemBlog } from "@/model/blog/tags-utils";
+
+// export const revalidate = 3600 // revalidate the data at most every hour
 
 export default async function BlogList() {
-  const posts = await getLatestPopulatePostGroupByYear();
-  console.log(posts);
+  const posts = await getLatestPopularPostGroupByYear();
+  // console.log({ posts });
 
   return (
     <>
       {Object.entries(posts).map(([year, posts]) => (
         <>
           <BackgroundYear year={year} />
-          {posts.map((post: any) => (
-            <BlogItem key={post.key} post={post} />
+          {posts.filter(p => !isSystemBlog(p.tags)).map((post: any) => (
+            <BlogItem key={post._id} post={post} />
           ))}
         </>
       ))}

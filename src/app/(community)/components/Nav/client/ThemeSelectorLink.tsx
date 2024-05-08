@@ -1,53 +1,37 @@
 "use client";
 
-import { createContext, useEffect, useState } from "react";
-import Link from "next/link";
-import cStyle from "../CLink.module.css";
+import clsx from "clsx";
+import { useLayoutEffect } from "react";
+import { setupTheme, toggleThemeMode } from "@/client/darkTheme";
 
-export const ThemeContext = createContext({ theme: "normal" });
+import { RiComputerLine, RiMoonLine, RiSunLine } from "react-icons/ri";
+import { useTheme } from "@/client/hooks/useTheme";
 
-const THEMES = ["normal", "light", "dark"];
+export const h2PosBoxStyle = 'fixed bg-gray-100 shadow dark:bg-gray-700 rounded-full '
+export const h2Style = 'p-3 overflow-hidden flex justify-center items-center '
 
-function toggleTheme(curTheme = "normal", init = false) {
-  const _curIndex = !init
-    ? THEMES.indexOf(curTheme)
-    : THEMES.indexOf(curTheme) - 1;
-  const curIndex = _curIndex < 0 ? THEMES.length - 1 : _curIndex;
-  const themeIdx = (curIndex + 1) % THEMES.length;
-  const theme = THEMES[themeIdx];
-  document.documentElement.setAttribute("theme", theme);
-  document.documentElement.classList.remove(...THEMES);
-  const nextTheme =
-    theme != "normal"
-      ? theme
-      : window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  document.documentElement.style.colorScheme = nextTheme;
-  document.documentElement.classList.add(nextTheme);
-  localStorage.setItem("theme", theme);
-  return theme;
-}
-
-export default function ThemeSelectorLink({ children }: any) {
-  const [theme, setTheme] = useState({ theme: "normal" });
-  useEffect(() => {
-    const theme = localStorage.theme || "normal";
-    setTheme({ theme: toggleTheme(theme, true) });
-  }, []);
+export default function ThemeSelectorLink({ className, title }: any) {
+  useLayoutEffect(() => {
+    setupTheme();
+  }, [])
+  // console.log({ className });
+  const theme = useTheme();
   return (
-    <Link
+    <a
+      theme-switcher=""
+      className={clsx(className, h2Style, ' right-5 bottom-3', h2PosBoxStyle, ` text-slate-700 dark:text-slate-200 `, `hover:text-jj-sky-750 dark:hover:text-sky-400  active:text-opacity-100`)}
+      title={title}
       href=""
-      title="Toggle Color Theme"
       onClick={(e: any) => {
         e.preventDefault();
-        const theme = toggleTheme(localStorage.theme);
-        setTheme({ theme });
+        toggleThemeMode()
       }}
     >
-      <h2 className={`hover:scale-110 ${cStyle.h2}`}>
-        <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
-      </h2>
-    </Link>
+      {
+        theme?.mode === "dark" ? <RiMoonLine />
+          : theme?.mode === "light" ? <RiSunLine />
+            : <RiComputerLine />
+      }
+    </a>
   );
 }

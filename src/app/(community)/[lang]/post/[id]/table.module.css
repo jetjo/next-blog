@@ -1,0 +1,54 @@
+.prose :where(table):not(:where([class~=not-prose] *)) {
+    width: 100%;
+    table-layout: auto;
+    text-align: left;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: .875em;
+    line-height: 1.7142857;
+}
+
+.prose :where(thead):not(:where([class~=not-prose] *)) {
+    border-bottom-width: 1px;
+    border-bottom-color: var(--prose-th-borders);
+}
+
+.prose :where(thead th, thead tr):not(:where([class~=not-prose] *)) {
+    font-weight: 600;
+    vertical-align: bottom;
+    padding-right: .5714286em;
+    padding-bottom: .5714286em;
+    padding-left: .5714286em;
+    border-bottom: 3px solid var(--prose-th-borders);
+}
+
+.prose :where(tbody tr):not(:where([class~=not-prose] *)) {
+    /* 必须指定,被前面覆盖掉了 */
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: var(--prose-td-borders);
+}
+
+.prose :where(tbody td, tfoot td):not(:where([class~=not-prose] *)) {
+    padding: 1.2em 1em;
+}
+
+.prose :where(tbody td):not(:where([class~=not-prose] *)) {
+    vertical-align: baseline;
+}
+
+.prose :where(tbody td:first-child, tfoot td:first-child):not(:where([class~=not-prose] *)) {
+    padding-left: 0;
+}
+
+.prose :where(tbody td:last-child, tfoot td:last-child):not(:where([class~=not-prose] *)) {
+    padding-right: 0;
+}
+
+.prose :where(thead th:first-child):not(:where([class~=not-prose] *)) {
+    padding-left: 0;
+}
+
+.prose :where(thead th:last-child):not(:where([class~=not-prose] *)) {
+    padding-right: 0;
+}
