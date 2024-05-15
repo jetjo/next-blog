@@ -2,7 +2,7 @@ import { getLatestPopularPost } from "@/app/(community)/actions";
 import { BlogDateTime$1 } from "@/app/(community)/components/blog-datetime";
 import { ColorTags } from "@/app/(community)/components/color-tags";
 import { WithTheme } from "@/components/server/hoc/theme";
-import { _parseInt } from "utils/number.js";
+import { _parseInt } from "utils/number.mjs";
 import clsx from "clsx";
 import style from "./1.module.css"
 

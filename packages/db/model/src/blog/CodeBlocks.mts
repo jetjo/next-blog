@@ -1,6 +1,6 @@
 import { pick } from "lodash-es";
-import { ObjectId } from "@db/driver/index.js";
-import { ICodeBlockDoc, ICodeBlock } from ".";
+import { ObjectId } from "@db/driver/index.mjs";
+import { ICodeBlockDoc, ICodeBlock } from "./index.mjs";
 
 export const CodeBlock = {
     uuid: {

@@ -1,5 +1,5 @@
-import type { IBLog, IModel } from "@db/blog-model/blog/index.js";
-import { _parseFloat, _parseInt } from "utils/number.js";
+import type { IBLog, IModel } from "@db/blog-model/blog/index.mjs";
+import { _parseFloat, _parseInt } from "utils/number.mjs";
 import dayjs from "dayjs";
 
 export default function BlogDateTime({ post, dateTemplate = "MM-DD ", isListItem = true }: { post: IBLog & IModel, dateTemplate?: string, isListItem: boolean }) {

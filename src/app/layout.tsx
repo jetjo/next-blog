@@ -10,7 +10,7 @@ import TestCom_ from "@/tmp/components/TestCom_";
 import Plum2 from "@/components/client/Plum2";
 import { Theme } from "@/components/Theme";
 
-import "utils/LangUtils.js";
+import "utils/LangUtils.mjs";
 
 config.autoAddCss = false;
 export const metadata: Metadata = {

@@ -33,7 +33,7 @@ import { docCookies } from "@/client/cookie";
 import { nextFrame } from '@/client/utils';
 import { programLangs, allLangs } from "@/langs";
 import type { AllActiveLabels, Lang, LangConf } from "@/langs";
-import { _parseInt } from 'utils/number.js';
+import { _parseInt } from 'utils/number.mjs';
 
 const devopsLabelIcon = {
     bash: <VscTerminalBash />,

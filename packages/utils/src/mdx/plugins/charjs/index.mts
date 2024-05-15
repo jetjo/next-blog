@@ -4,7 +4,7 @@ import {
   createImportsNode,
   getChartPropsFromContent,
   createRegisterNode,
-} from './utils';
+} from './utils.mjs';
 
 const PLUGIN_NAME = 'remark-chartjs';
 

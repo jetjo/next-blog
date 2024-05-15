@@ -7,7 +7,7 @@ import { toJsxRuntime } from "hast-util-to-jsx-runtime";
 import { renderToStaticMarkup } from "react-dom/server";
 import * as _runtime from "react/jsx-runtime";
 import { toHtml } from "hast-util-to-html";
-import { starryNightGutter } from "./hast-util-starry-night-gutter";
+import { starryNightGutter } from "./hast-util-starry-night-gutter.mjs";
 
 const starryNight = await createStarryNight(common);
 

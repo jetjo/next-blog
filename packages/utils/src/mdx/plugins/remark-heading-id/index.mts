@@ -4,7 +4,7 @@
  */
 
 import { visit } from 'unist-util-visit'
-import { setNodeId, getDefaultId } from './utils'
+import { setNodeId, getDefaultId } from './utils.mjs'
 
 export function remarkHeadingId(options = { defaults: false, uniqueDefaults: true }) {
     return function (node) {

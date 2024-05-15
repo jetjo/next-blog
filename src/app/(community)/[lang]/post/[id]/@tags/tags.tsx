@@ -1,18 +1,16 @@
 "use client";
 
+import { memo, useEffect, useId, useRef, useState } from "react";
 import clsx from "clsx";
 import { FaTags } from 'react-icons/fa6'
-import { CiEdit } from 'react-icons/ci'
 import { FaRegEdit, FaRegSave } from 'react-icons/fa'
 // 分子结构, correlate
 import { SiMoleculer } from "react-icons/si";
 import { IoMdAdd } from "react-icons/io";
-import { memo, useEffect, useId, useRef, useState } from "react";
-import { IBLog } from "@db/blog-model/blog/index.js";
-import style from './tag.module.css'
+import { IBLog } from "@db/blog-model/blog/index.mjs";
+import { tagDiff } from "@db/blog-model/blog/tags-utils.mjs";
 import { getRelatedTags, updatePost } from "@/app/(community)/actions";
-import { difference } from "lodash-es";
-import { tagDiff } from "@db/blog-model/blog/tags-utils.js";
+import style from './tag.module.css'
 
 const Tags = memo(function Tags({ post, matchedTags }: { post: IBLog, matchedTags?: string[] }) {
 
@@ -183,6 +181,7 @@ const AddTagForm = memo(({ blog, matchedTags = [], onChange }: { blog: IBLog, ma
         if (tags.length) {
             const _relates = await getRelatedTags({ tags });
             const res = tagDiff(_relates, blog.tags);
+            // @ts-ignore
             res.mode = 'search';
             setInputedTags(res);
             return;

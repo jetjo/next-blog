@@ -1,6 +1,6 @@
 "use server";
 
-import * as Model from "@db/blog-model/blog/actions.js";
+import * as Model from "@db/blog-model/blog/actions.mjs";
 import { redirect } from "next/navigation";
 
 export async function login(form: FormData) {

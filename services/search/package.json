@@ -1,0 +1,33 @@
+{
+  "name": "search",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --build",
+    "predev": "pnpm build",
+    "dev": "NODE_OPTIONS=' --experimental-detect-module ' node ./dist/index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@db/blog-model": "workspace:*",
+    "@db/driver": "workspace:*",
+    "utils": "workspace:*"
+  },
+  "dependenciesMeta": {
+    "@db/blog-model": {
+      "injected": true
+    },
+    "@db/driver": {
+      "injected": true
+    },
+    "utils": {
+      "injected": true
+    }
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}

@@ -1,4 +1,4 @@
-import { Model } from "../";
+import { Model } from "../index.mjs";
 
 export async function login(email: string, password: string) {
   const user = await Model.User.findOne({ email });

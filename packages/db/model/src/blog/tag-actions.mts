@@ -1,8 +1,8 @@
 /// <reference lib="esnext" />
 
-import { redis } from "@db/driver/index.js";
+import { redis } from "@db/driver/index.mjs";
 import { capitalize, difference, intersection } from "lodash-es";
-import { tagDiff } from "./tags-utils";
+import { tagDiff } from "./tags-utils.mjs";
 
 /**
  * @return ```js

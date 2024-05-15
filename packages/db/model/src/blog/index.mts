@@ -1,12 +1,12 @@
 import type { Schema } from "mongoose";
-import { db, dbOption } from "@db/driver/index.js";
+import { db, dbOption } from "@db/driver/index.mjs";
 
-import { option as commentOption, Comment } from "./Comment";
-import { option as mdxContentOption, MDXContent } from './MDXContentRaw';
-import { option as blogOption, Blog } from "./Blog";
-import { option as codeBlockOption, CodeBlock } from "./CodeBlocks";
-import { option as blogAccessOption, BlogAccess } from "./BlogAccess";
-import { option as headingOption, Heading } from "./Headings";
+import { option as commentOption, Comment } from "./Comment.mjs";
+import { option as mdxContentOption, MDXContent } from './MDXContentRaw.mjs';
+import { option as blogOption, Blog } from "./Blog.mjs";
+import { option as codeBlockOption, CodeBlock } from "./CodeBlocks.mjs";
+import { option as blogAccessOption, BlogAccess } from "./BlogAccess.mjs";
+import { option as headingOption, Heading } from "./Headings.mjs";
 
 const _GLOBAL = globalThis as unknown as GlobalNode;
 

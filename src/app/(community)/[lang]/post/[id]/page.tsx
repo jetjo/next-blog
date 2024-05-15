@@ -2,16 +2,17 @@
 
 import type { Metadata, ResolvingMetadata } from 'next';
 import type { AllActiveLabels } from "@/langs";
-import type { IBLog } from "@db/blog-model/blog/index.js";
+import type { IBLog } from "@db/blog-model/blog/index.mjs";
 import type { Props } from '../types/types.[id]';
 
 import { cookies } from "next/headers";
-import { loadCom_ } from "utils/mdx/load.js";
-import { getPost } from "../../../actions";
+
+import { loadCom_ } from "utils/mdx/load.mjs";
 import { NoContent } from '@/components/no-content';
-import { Article } from './Article';
-import { render } from 'utils/hightlighter.js';
+import { render } from 'utils/hightlighter.mjs';
 export { generateStaticParams } from './_pre-render-utils/page';
+import { Article } from './Article';
+import { getPost } from "../../../actions";
 
 export async function generateMetadata({ params, searchParams }: Props, parent: ResolvingMetadata): Promise<Metadata> {
   // read route params

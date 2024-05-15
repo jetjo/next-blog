@@ -7,15 +7,15 @@ import { writeFile } from "fs/promises";
 import punycode from 'punycode/punycode.js'
 import { cache } from "react";
 
-import { compile } from "utils/mdx/index.js";
-import { readFile } from "utils/file.js";
-import { IBLog, ICodeBlock, IHeading, IModel, Model } from ".";
-import { toBlog } from "./Blog";
-import { toMDXContent } from "./MDXContentRaw";
-import { toCodeBlock } from "./CodeBlocks";
-import { headingKeys, toHeading } from "./Headings";
-import { getBlogIdsOfTag, getMatchedTags, normalizeTags, saveTags, updateTags } from "./tag-actions";
-import { isSystemBlog, reserveTags, tagDiff } from "./tags-utils";
+import { compile } from "utils/mdx/index.mjs";
+import { readFile } from "utils/file.mjs";
+import { IBLog, ICodeBlock, IHeading, IModel, Model } from "./index.mjs";
+import { toBlog } from "./Blog.mjs";
+import { toMDXContent } from "./MDXContentRaw.mjs";
+import { toCodeBlock } from "./CodeBlocks.mjs";
+import { headingKeys, toHeading } from "./Headings.mjs";
+import { getBlogIdsOfTag, getMatchedTags, normalizeTags, saveTags, updateTags } from "./tag-actions.mjs";
+import { isSystemBlog, reserveTags, tagDiff } from "./tags-utils.mjs";
 import { pick } from "lodash-es";
 
 const isDev = process.env.NODE_ENV === 'development'

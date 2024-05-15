@@ -1,4 +1,4 @@
-import { ObjectId, db as _db, connectOption, dbOption } from "utils/mongoose.js";
+import { ObjectId, db as _db, connectOption, dbOption } from "utils/mongoose.mjs";
 
 const _GLOBAL = globalThis as unknown as GlobalNode;
 
@@ -14,4 +14,4 @@ await db.connect(uri, connectOption);
 
 export { ObjectId, db, dbOption };
 
-export { redis, backendCache } from './redis'
+export { redis, backendCache } from './redis/index.mjs'

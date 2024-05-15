@@ -9,6 +9,10 @@
 			"path": "./packages/db/model"
 		},
 		{
+			"name": "search",
+			"path": "./services/search"
+		},
+		{
 			"name": "db-driver",
 			"path": "./packages/db/driver"
 		},
@@ -27,6 +31,7 @@
 	"settings": {
 		"explorerExclude.backup": {},
 		"cSpell.words": [
+			"predev",
 			"recma"
 		],
 		"files.exclude": {

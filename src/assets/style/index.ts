@@ -6,7 +6,7 @@ import "./code/light.css"
 import "./code/dark.css"
 import './katex.css'
 import './dialog.css'
-import { _parseInt } from "utils/number.js";
+import { _parseInt } from "utils/number.mjs";
 
 const hues: number[] = []
 

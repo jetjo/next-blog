@@ -31,14 +31,14 @@ import { h } from 'hastscript'
 import { visit } from 'unist-util-visit'
 import { toString } from 'hast-util-to-string'
 
-import { remarkHeadingId } from "./plugins/remark-heading-id";
-import { myRemarkYoutubeDirective } from './plugins/youtube-directive'
-import remarkHeadings from './plugins/remark-heading';
-import remarkMdxChartJS from './plugins/charjs'; // 'remark-mdx-chartjs';
-import { remarkAssertOrigin } from "./plugins/assert-origin";
-import { unsupportedLangs, delQuoteAtStartAndEnd, parseTokenStr, rehypeCodeLangSwitcher } from "./plugins/code-switcher";
+import { remarkHeadingId } from "./plugins/remark-heading-id/index.mjs";
+import { myRemarkYoutubeDirective } from './plugins/youtube-directive.mjs'
+import remarkHeadings from './plugins/remark-heading.mjs';
+import remarkMdxChartJS from './plugins/charjs/index.mjs'; // 'remark-mdx-chartjs';
+import { remarkAssertOrigin } from "./plugins/assert-origin.mjs";
+import { unsupportedLangs, delQuoteAtStartAndEnd, parseTokenStr, rehypeCodeLangSwitcher } from "./plugins/code-switcher.mjs";
 
-import { highLightLoad, _parseFloat, _parseInt } from "../";
+import { highLightLoad, _parseFloat, _parseInt } from "../index.mjs";
 
 type HAncestor1 = string | null;
 type HAncestor2 = string | null;
@@ -52,7 +52,7 @@ type HChildren4 = string[] | null;
 type HChildren5 = string[] | null;
 type HChildren6 = string[] | null;
 
-type H = { id: string, depth: number, idx: number }
+export type H = { id: string, depth: number, idx: number }
 
 type Heading1Children = [H[], string, HChildren2, HChildren3, HChildren4, HChildren5, HChildren6]
 type Heading2Children = [H[], undefined, string, HChildren3, HChildren4, HChildren5, HChildren6]

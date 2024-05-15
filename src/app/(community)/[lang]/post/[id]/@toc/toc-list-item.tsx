@@ -1,9 +1,9 @@
 "use client";
 
+import type { H } from "utils/mdx/compile.mjs";
 import { nextFrame } from "@/client/utils";
-import { IHeading } from "@db/blog-model/blog/index.js";
-import { H } from "@db/blog-model/blog/index.js/Headings";
-import { _parseInt } from "utils/number.js";
+import { IHeading } from "@db/blog-model/blog/index.mjs";
+import { _parseInt } from "utils/number.mjs";
 import { throttle } from "lodash-es";
 import { memo, useEffect, useState } from "react";
 

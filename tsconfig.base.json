@@ -31,6 +31,8 @@
         "useDefineForClassFields": true,
         "useUnknownInCatchVariables": true,
         "verbatimModuleSyntax": false,
+        "allowArbitraryExtensions": true,
+        // "allowImportingTsExtensions": true
     },
     "exclude": [
         "**/node_modules",

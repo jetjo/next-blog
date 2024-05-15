@@ -2,8 +2,8 @@
 
 import type { FunctionComponent } from "react";
 import type { AllActiveLabels } from "@/langs";
-import type { MDXModule } from "utils/mdx/load.js";
-import type { ICodeBlock } from "@db/blog-model/blog/index.js";
+import type { MDXModule } from "utils/mdx/load.mjs";
+import type { ICodeBlock } from "@db/blog-model/blog/index.mjs";
 
 import MDXLayout from "./_MDXLayout";
 import Image from "./_components/_Image";

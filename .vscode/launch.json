@@ -26,6 +26,8 @@
                 "lerna",
                 "run",
                 "dev",
+                "--scope",
+                "next-blog"
             ],
             "cwd": "${workspaceFolder}",
             "skipFiles": [

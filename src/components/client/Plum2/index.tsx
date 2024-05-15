@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 import clsx from "clsx"
 import { getTheme, onDark } from "@/client/darkTheme";
 import { nextFrame } from "@/client/utils";
-import { _parseInt } from "utils/number.js";
+import { _parseInt } from "utils/number.mjs";
 import { throttle } from "lodash-es";
 
 class Branch {

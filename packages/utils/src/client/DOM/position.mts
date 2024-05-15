@@ -1,6 +1,6 @@
 /// <reference lib="DOM" />
 
-import { _parseInt } from "../../number";
+import { _parseInt } from "../../number.mjs";
 import { sum } from "lodash-es";
 
 function getPositionOnPage(elementId: string) {

@@ -1,6 +1,6 @@
 import { pick } from "lodash-es";
-import { ObjectId } from "@db/driver/index.js";
-import { IBlogDoc, IBLog } from ".";
+import { ObjectId } from "@db/driver/index.mjs";
+import { IBlogDoc, IBLog } from "./index.mjs";
 
 const file = {} as File;
 file.lastModified;

@@ -1,12 +1,12 @@
 "use server";
-import type { IBLog, IModel } from "@db/blog-model/blog/index.js";
+import type { IBLog, IModel } from "@db/blog-model/blog/index.mjs";
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import * as Model from "@db/blog-model/blog/actions.js";
-import { getMatchedTags } from "@db/blog-model/blog/tag-actions.js";
-import * as TagModel from "@db/blog-model/blog/tag-actions.js";
-import { isSystemBlog } from "@db/blog-model/blog/tags-utils.js";
+import * as Model from "@db/blog-model/blog/actions.mjs";
+import { getMatchedTags } from "@db/blog-model/blog/tag-actions.mjs";
+import * as TagModel from "@db/blog-model/blog/tag-actions.mjs";
+import { isSystemBlog } from "@db/blog-model/blog/tags-utils.mjs";
 // import { z } from "zod";
 
 // const schema = z.object({
