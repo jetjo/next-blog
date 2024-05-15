@@ -1,0 +1,46 @@
+{
+  "namedInputs": {
+    "noMarkdown": [
+      "!{projectRoot}/**/*.md"
+    ],
+    "noLog": [
+      "!{projectRoot}/**/*.log"
+    ],
+    "noSpec": [
+      "!{projectRoot}/**/*.spec.*"
+    ],
+    "onlySpec": [
+      "{projectRoot}/**/*.spec.*"
+    ]
+  },
+  "targetDefaults": {
+    "test": {
+      "dependsOn": [],
+      "inputs": [
+        "onlySpec"
+      ]
+    },
+    "dev": {
+      "dependsOn": [
+        "^predev"
+      ]
+    },
+    "predev": {
+      "cache": true,
+      "dependsOn": [
+        "^predev"
+      ],
+      "inputs": [
+        "noMarkdown",
+        "^noMarkdown",
+        "noLog",
+        "^noLog",
+        "noSpec",
+        "^noSpec"
+      ],
+      "outputs": [
+        "{projectRoot}/dist"
+      ]
+    }
+  }
+}

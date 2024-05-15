@@ -1,4 +1,4 @@
-import type {IBLog, IModel} from "@/model/blog";
+import type {IBLog, IModel} from "@db/blog-model/blog/index.js";
 import dayjs from "dayjs";
 import style from "./blog-item.module.css";
 import clsx from "clsx";

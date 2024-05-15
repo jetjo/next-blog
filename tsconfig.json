@@ -35,10 +35,7 @@
     "types": [
       "node",
       "react",
-      "react-dom",
-      "mongoose",
-      "katex",
-      "redis"
+      "react-dom"
     ],
   },
   "include": [
@@ -49,9 +46,11 @@
     ".next/types/**/*.ts",
     "src/app/(community)/[lang]/post/[id]/_components/icons/Cross.tsx",
     "src/app/(community)/[lang]/post/[id]/_components/icons/Check.tsx",
-    "src/app/(community)/[lang]/post/[id]/page.tsx"
+    "src/app/(community)/[lang]/post/[id]/page.tsx",
+    "packages/utils/index.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ]
 }

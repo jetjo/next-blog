@@ -59,7 +59,7 @@ function Code({ children, className, codeBlock, suffixEmptyLine = '', codeBlocks
         ref={codeRef}
         className={clsx(
           className,
-          " origin-top-left w-full inline-block p-[1em] pt-3 overflow-y-hidden overflow-x-auto"
+          " origin-top-left w-full inline-block p-[1em] pt-3 pb-5 overflow-y-hidden overflow-x-auto"
         )}
         dangerouslySetInnerHTML={{ __html: html + suffixEmptyLine }}
       ></code>
@@ -70,3 +70,5 @@ function Code({ children, className, codeBlock, suffixEmptyLine = '', codeBlocks
 Code.$__type = "Code";
 
 export { Code };
+
+// export default Code;

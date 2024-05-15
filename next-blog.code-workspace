@@ -1,9 +1,26 @@
 {
 	"folders": [
 		{
+			"name": "blog-site",
 			"path": "."
 		},
 		{
+			"name": "db-model",
+			"path": "./packages/db/model"
+		},
+		{
+			"name": "db-driver",
+			"path": "./packages/db/driver"
+		},
+		{
+			"name": "utils",
+			"path": "./packages/utils"
+		},
+		{
+			"path": "./demos"
+		},
+		{
+			"name": "blog-files",
 			"path": "./../jetjo-first-blog/data/blogs"
 		}
 	],
@@ -11,6 +28,15 @@
 		"explorerExclude.backup": {},
 		"cSpell.words": [
 			"recma"
-		]
+		],
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/Thumbs.db": true,
+			"**/*.git": true
+		}
 	}
 }

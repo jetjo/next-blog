@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "target": "ESNext", //支持Top-level 'await'的最低版本
+        "composite": true,
+        "declaration": true,
+        "emitDeclarationOnly": false,
+        "esModuleInterop": true,
+        "importHelpers": true,
+        "importsNotUsedAsValues": "remove",
+        "incremental": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "lib": [
+            "ESNext"
+        ],
+        "module": "ESNext", // NodeNext: 生成ES还是CJS取决于package.json的type属性
+        "moduleResolution": "Bundler", // NodeNext: 导入ts文件必须带扩展名
+        "noEmit": false,
+        "noImplicitAny": false,
+        "preserveSymlinks": false,
+        "pretty": true,
+        "resolveJsonModule": true,
+        "resolvePackageJsonExports": true,
+        "resolvePackageJsonImports": true,
+        // "declarationDir": "dist",
+        // "outDir": "dist",
+        // "rootDir": "./src",
+        "sourceMap": true,
+        "strict": true,
+        "traceResolution": false,
+        "useDefineForClassFields": true,
+        "useUnknownInCatchVariables": true,
+        "verbatimModuleSyntax": false,
+    },
+    "exclude": [
+        "**/node_modules",
+        "**/dist"
+    ]
+}

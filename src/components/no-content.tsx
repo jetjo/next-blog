@@ -2,7 +2,7 @@ import noContentImg from '@/assets/images/no-content.jpg'
 import clsx from 'clsx';
 import Image from 'next/image'
 
-export async function NoContent({ message, className }: { message: string, className: string }) {
+export function NoContent({ message, className }: { message: string, className: string }) {
     // console.log({ noContentImg });
     return (
         <div

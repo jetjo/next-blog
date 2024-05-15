@@ -11,7 +11,7 @@
         "wooorm"
     ],
     "files.exclude": {
-        "**/.git": true,
+        "**/.git": false,
         "**/.svn": true,
         "**/.hg": true,
         "**/CVS": true,
@@ -19,11 +19,11 @@
         "**/Thumbs.db": true,
         "**/.next": false,
         ".next": false,
-        "**/.vscode": true,
+        "**/.vscode": false,
         ".vscode": false,
         "**/.data": false,
         ".data": false,
-        "**/node_modules": true,
+        "**/node_modules": false,
         "node_modules": false,
         "**/.idea": true,
         "**/certificates": true,

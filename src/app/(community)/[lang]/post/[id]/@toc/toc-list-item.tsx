@@ -1,9 +1,9 @@
 "use client";
 
 import { nextFrame } from "@/client/utils";
-import { IHeading } from "@/model/blog";
-import { H } from "@/model/blog/Headings";
-import { _parseInt } from "@/utils/number";
+import { IHeading } from "@db/blog-model/blog/index.js";
+import { H } from "@db/blog-model/blog/index.js/Headings";
+import { _parseInt } from "utils/number.js";
 import { throttle } from "lodash-es";
 import { memo, useEffect, useState } from "react";
 

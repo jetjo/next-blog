@@ -1,13 +1,13 @@
 "use server";
 
-import * as Model from "@/model/auth/action";
+import * as Model from "@db/blog-model/blog/actions.js";
 import { redirect } from "next/navigation";
 
 export async function login(form: FormData) {
   try {
     const email = form.get("email") as string;
     const password = form.get("password") as string;
-    const user = Model.login(email, password);
+    // const user = Model.login(email, password);
   } catch (error) {
     throw error;
   }
@@ -19,7 +19,7 @@ export async function register(form: FormData) {
   try {
     const email = form.get("email") as string;
     const password = form.get("password") as string;
-    const user = Model.register(email, password);
+    // const user = Model.register(email, password);
   } catch (error) {
     throw error;
   }

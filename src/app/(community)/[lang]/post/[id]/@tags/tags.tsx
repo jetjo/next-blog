@@ -8,11 +8,11 @@ import { FaRegEdit, FaRegSave } from 'react-icons/fa'
 import { SiMoleculer } from "react-icons/si";
 import { IoMdAdd } from "react-icons/io";
 import { memo, useEffect, useId, useRef, useState } from "react";
-import { IBLog } from "@/model/blog";
+import { IBLog } from "@db/blog-model/blog/index.js";
 import style from './tag.module.css'
 import { getRelatedTags, updatePost } from "@/app/(community)/actions";
 import { difference } from "lodash-es";
-import { tagDiff } from "@/model/blog/tags-utils";
+import { tagDiff } from "@db/blog-model/blog/tags-utils.js";
 
 const Tags = memo(function Tags({ post, matchedTags }: { post: IBLog, matchedTags?: string[] }) {
 

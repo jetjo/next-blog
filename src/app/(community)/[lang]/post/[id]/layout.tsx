@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import style from './article.module.css'
-import { isSystemBlog } from "@/model/blog/tags-utils";
+import { isSystemBlog } from "@db/blog-model/blog/tags-utils.js";
 import { getPost } from "@/app/(community)/actions";
 
 export type LayoutProps = {

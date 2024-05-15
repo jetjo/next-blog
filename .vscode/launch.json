@@ -17,6 +17,26 @@
                 "<node_internals>/**"
             ],
             "type": "node"
+        },
+        {
+            "name": "Launch Next App",
+            "request": "launch",
+            "runtimeExecutable": "pnpx",
+            "runtimeArgs": [
+                "lerna",
+                "run",
+                "dev",
+            ],
+            "cwd": "${workspaceFolder}",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node",
+            // "serverReadyAction": {
+            //     "action": "debugWithChrome",
+            //     "pattern": "Local: http://localhost:([0-9]+)",
+            //     "uriFormat": "http://localhost:%s"
+            // }
         }
     ]
 }

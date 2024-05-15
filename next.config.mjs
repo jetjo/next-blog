@@ -1,14 +1,14 @@
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import nextMDX from "@next/mdx";
-import remarkGfm from "remark-gfm";
+// import remarkGfm from "remark-gfm";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkGfm],
+    // remarkPlugins: [remarkGfm],
     rehypePlugins: [],
   },
 });
@@ -50,7 +50,7 @@ const nextConfig = {
       },
       {
         source: "/",
-        destination: "/post/6639cad189554fda70e0a9ee",
+        destination: "/post/6642f81ae32a376d70157b7e",
         permanent: false,
       },
     ];

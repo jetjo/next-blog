@@ -75,7 +75,7 @@ function Pre({ preferGramLang = allActiveLabels, switcher, codeBlocks, children,
             <span className="hidden">{block.idx}</span> {programIcon[block.lang] || <BiFile />}
             <span className="filename inline-block overflow-hidden text-ellipsis whitespace-nowrap min-w-0 max-w-full ">{block.filename || block.lang}</span>
           </div> */}
-          <div className="absolute right-3 bottom-3 inline-flex place-items-center gap-1">
+          <div className="absolute right-1 bottom-1 inline-flex place-items-center gap-1">
             {/* 不能给`switcher`传递`curLang`作为`preferLang`的属性值, `curLang`是变化的 */}
             {switcher && <>
               <CodeTab preferLang={preferLang || lgs[0]} langMap={langMap} filename={filenames} onLangChange={handleLangChange} langs={lgs} />
@@ -87,7 +87,7 @@ function Pre({ preferGramLang = allActiveLabels, switcher, codeBlocks, children,
       </>}
       {isNoLang ?
         <pre pure-pre='true' {...props}>{children}</pre> :
-        <pre><Code className={block.className} codeBlock={block.block} suffixEmptyLine={/**html */`<br /><span class="line opacity-0">&nbsp;</span>`.repeat(1 + Math.max(0, Number(codeLenMax) - (block.block?.rowLen || 0)))} /></pre>}
+        <pre><Code className={block.className} codeBlock={block.block} suffixEmptyLine={/**html */`<br /><span class="line opacity-0">&nbsp;</span>`.repeat(Math.max(0, Number(codeLenMax) - (block.block?.rowLen || 0)))} /></pre>}
     </div>
   );
 }

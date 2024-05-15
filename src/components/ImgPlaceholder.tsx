@@ -1,7 +1,7 @@
 import Image from "next/image"
 import placeholder from './picture-loading-failed-1.svg';
 import clsx from "clsx";
-import { _parseInt } from "@/utils/number";
+import { _parseInt } from "utils/number.js";
 
 export default function ImgPlaceholderCom({ alt, ...props }: { alt: string, width: any, height: any }) {
     // console.log({ props });
