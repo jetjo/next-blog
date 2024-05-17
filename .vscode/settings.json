@@ -29,5 +29,6 @@
         "**/certificates": true,
         "**/.debug": false
     },
-    "explorerExclude.backup": {}
+    "explorerExclude.backup": {},
+    // "files.autoSave": "off",
 }

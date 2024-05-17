@@ -33,6 +33,7 @@
         "verbatimModuleSyntax": false,
         "allowArbitraryExtensions": true,
         // "allowImportingTsExtensions": true
+        "noEmitOnError": false
     },
     "exclude": [
         "**/node_modules",

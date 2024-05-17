@@ -1,12 +1,9 @@
-import { db, dbOption } from "@db/driver/index.mjs";
 
-import { option as userOption, User } from "./User.mjs";
-import { Model as BlogModel } from "./blog/index.mjs";
+export type { IModel } from "./schema-helper.mjs";
 
-const UserSchema = new db.Schema(User, userOption);
-const UserModel = db.models.User || db.model("User", UserSchema);
+export * from './blog.mjs'
+export * from './blog-actions.mjs'
+export * from './tag-actions.mjs'
 
-export const Model = {
-  User: UserModel,
-  ...BlogModel,
-};
+export * from './auth.mjs'
+export * from './blog-actions.mjs'

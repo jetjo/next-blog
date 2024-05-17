@@ -2,7 +2,8 @@
 
 import { redis } from "@db/driver/index.mjs";
 import { capitalize, difference, intersection } from "lodash-es";
-import { tagDiff } from "./tags-utils.mjs";
+import { tagDiff, isSystemBlog } from "./blog/tags-utils.mjs";
+export { tagDiff, isSystemBlog };
 
 /**
  * @return ```js

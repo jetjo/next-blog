@@ -1,6 +1,6 @@
 import { pick } from "lodash-es";
 import { ObjectId } from "@db/driver/index.mjs";
-import { IMDXContentDoc, IMDXContent } from "./index.mjs";
+import { IMDXContentDoc, IMDXContent } from "../blog.mjs";
 
 export const MDXContent = {
   content: {

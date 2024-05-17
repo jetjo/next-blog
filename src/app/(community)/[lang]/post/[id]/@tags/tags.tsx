@@ -1,4 +1,5 @@
 "use client";
+import type { IBLog } from "@db/blog-model";
 
 import { memo, useEffect, useId, useRef, useState } from "react";
 import clsx from "clsx";
@@ -7,8 +8,7 @@ import { FaRegEdit, FaRegSave } from 'react-icons/fa'
 // 分子结构, correlate
 import { SiMoleculer } from "react-icons/si";
 import { IoMdAdd } from "react-icons/io";
-import { IBLog } from "@db/blog-model/blog/index.mjs";
-import { tagDiff } from "@db/blog-model/blog/tags-utils.mjs";
+import { tagDiff } from "@db/blog-model";
 import { getRelatedTags, updatePost } from "@/app/(community)/actions";
 import style from './tag.module.css'
 
@@ -270,7 +270,7 @@ const AddTagForm = memo(({ blog, matchedTags = [], onChange }: { blog: IBLog, ma
                             <button value='cancel' formMethod="dialog">取消</button>
                             <button value='confirm' onClick={(e) => {
                                 e.preventDefault();
-                                onChange([...new Set(selectedTags.flat(Infinity))]);
+                                onChange([...new Set(selectedTags.flat(2))]);
                             }}
                             >确认</button>
                         </p>

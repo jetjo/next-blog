@@ -1,7 +1,7 @@
-import type {IBLog, IModel} from "@db/blog-model/blog/index.mjs";
-import dayjs from "dayjs";
-import style from "./blog-item.module.css";
+import type {IBLog, IModel} from "@db/blog-model";
+
 import clsx from "clsx";
+import style from "./blog-item.module.css";
 import BlogDateTime from "./blog-datetime";
 
 export default function BlogItem({post}: { post: IBLog & IModel }) {

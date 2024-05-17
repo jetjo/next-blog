@@ -1,17 +1,9 @@
 import { pick } from "lodash-es";
 import { ObjectId } from "@db/driver/index.mjs";
-import { IBlogDoc, IBLog } from "./index.mjs";
-
-const file = {} as File;
-file.lastModified;
-file.name;
-file.size;
-file.type;
+import { IBlogDoc, IBLog } from "../blog.mjs";
 
 export const Blog = {
-  title: {
-    type: String,
-  },
+  title: String,
   slug: {
     type: String,
     default: "",
@@ -25,7 +17,7 @@ export const Blog = {
     default: "",
   },
   links: {
-    type: Array,
+    type: [String],
     default: [],
   },
   // 任意级别的类目, 类目之间的关系由其他表维护, 此处意图存储最细致级别的类目
@@ -70,7 +62,7 @@ export const Blog = {
     type: String,
   },
   tags: {
-    type: Array,
+    type: [String],
     default: []
   }
 } as const;

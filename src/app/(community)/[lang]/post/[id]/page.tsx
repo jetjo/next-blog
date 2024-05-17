@@ -2,7 +2,7 @@
 
 import type { Metadata, ResolvingMetadata } from 'next';
 import type { AllActiveLabels } from "@/langs";
-import type { IBLog } from "@db/blog-model/blog/index.mjs";
+import type { IBLog } from "@db/blog-model";
 import type { Props } from '../types/types.[id]';
 
 import { cookies } from "next/headers";

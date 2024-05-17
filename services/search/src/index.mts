@@ -1,3 +1,3 @@
-import { Model } from "@db/blog-model/index.mjs";
+import { BlogModel } from "@db/blog-model";
 
-Model.Blog.watch().on('change', change => console.log(change))
+BlogModel.watch().on('change', change => console.log(change))

@@ -3,7 +3,7 @@ export interface Context { }
 declare global {
     interface GlobalNode {
         db: typeof import('mongoose');
-        db_models: { [key: string]: any };
+        db_models: (typeof import('mongoose'))['models'];
     }
 
     type WriteAble<T> = {

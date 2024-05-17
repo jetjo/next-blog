@@ -1,12 +1,10 @@
 "use server";
-import type { IBLog, IModel } from "@db/blog-model/blog/index.mjs";
+import type { IBLog, IModel } from "@db/blog-model";
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import * as Model from "@db/blog-model/blog/actions.mjs";
-import { getMatchedTags } from "@db/blog-model/blog/tag-actions.mjs";
-import * as TagModel from "@db/blog-model/blog/tag-actions.mjs";
-import { isSystemBlog } from "@db/blog-model/blog/tags-utils.mjs";
+import { createPost as createPost_, getPost as getPost_, getBlogsOfTag as getBlogsOfTag_, getMatchedTags as getMatchedTags_, updateBlog$1, getPostList as getPostList_, getLatestPopulatePost as getLatestPopulatePost_, getBlogIdsOfTag as getBlogIdsOfTag_ } from "@db/blog-model";
+
 // import { z } from "zod";
 
 // const schema = z.object({
@@ -70,7 +68,7 @@ export async function createPost(form: FormData, preState?: PostFormState) {
     }
   }
   // #endregion
-  const postId = await Model.createPost(postBlob, { isPkgReadmeFile, remarkUsageOption });
+  const postId = await createPost_(postBlob, { isPkgReadmeFile, remarkUsageOption });
   if (preState) {
     preState.ref ||= {};
     preState.postId = postId;
@@ -135,7 +133,7 @@ export async function createPostWithState(
 }
 
 export async function getPost(id: string) {
-  const res = await Model.getPost(id);
+  const res = await getPost_(id);
   // dir(res)
   // console.log('getPost', res.post?.title);
   return res;
@@ -144,18 +142,12 @@ export async function getPost(id: string) {
 /**
  * @description 不包括系统博客
  */
-export async function getPosts(tag: string) {
-  const res = await Model.getBlogsOfTag(tag);
-  // dir(res)
-  return res.filter(b => !isSystemBlog(b.tags));
-}
+export const getPosts = async (tag: string) => await getBlogsOfTag_(tag)
 
-export async function getRelatedTags({ tags }: { tags: string[] }) {
-  return await getMatchedTags({ tags })
-}
+export const getRelatedTags = async ({ tags }: { tags: string[] }) => await getMatchedTags_({ tags })
 
 export async function updatePost({ blog, tags }: { blog: IBLog, tags: string[] }) {
-  await Model.updateBlog$1({ blog, tags });
+  await updateBlog$1({ blog, tags });
   revalidatePath("/(community)/[lang]/post/[id]", "page");
   revalidatePath("/(community)/[lang]/posts/[tag]", "page");
   revalidatePath("/(community)/[lang]/posts/@tags", "page");
@@ -163,9 +155,7 @@ export async function updatePost({ blog, tags }: { blog: IBLog, tags: string[] }
   revalidatePath("/(community)/[lang]/blogs/@tags", "page");
 }
 
-export async function getPostList() {
-  return Model.getPostList();
-}
+export const getPostList = async () => await getPostList_();
 
 let timestampForCache = performance.now();
 
@@ -176,12 +166,10 @@ let timestampForCache = performance.now();
  * 根据`post`关联的`rate`排序
  * 这些信息来源于`BlogAccess`表
  */
-export async function getLatestPopularPost(): Promise<(IBLog & IModel)[]> {
-  return (await Model.getLatestPopulatePost(timestampForCache)); // .filter(t => !!t);
-}
+export const getLatestPopularPost = async (): Promise<(IBLog & IModel)[]> => await getLatestPopulatePost_(timestampForCache);
 
 export async function getLatestPopularPostGroupByYear(): Promise<any[]> {
-  const posts = await Model.getLatestPopulatePost(timestampForCache);
+  const posts = await getLatestPopulatePost_(timestampForCache);
   const postGroup = {} as any;
   for (const post of posts) {
     if (!post) {
@@ -205,6 +193,4 @@ export async function getLatestPopularPostGroupByYear(): Promise<any[]> {
   return postGroup;
 }
 
-async function getBlogIdsOfTag(tag: string) {
-  return await TagModel.getBlogIdsOfTag(tag)
-}
+const getBlogIdsOfTag = async (tag: string) => await getBlogIdsOfTag_(tag);

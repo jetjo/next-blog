@@ -35,10 +35,10 @@ const nextConfig = {
     BlogTitleMinLen: '3',
     postStorePath: path.resolve(__dirname, ".data/blogs"),
     postStorePathRel: ".data/blogs",
-    db_mongoDB: "mongodb://127.0.0.1:27017",
+    // db_mongoDB: "mongodb://127.0.0.1:27017",
     // redis[s]://[[username][:password]@][host][:port][/db-number]
-    db_redis: "redis://127.0.0.1:6379",
-    dbName: "test",
+    // db_redis: "redis://127.0.0.1:6379",
+    // dbName: "test",
   },
   //   运行在`Middleware`之前
   async redirects() {

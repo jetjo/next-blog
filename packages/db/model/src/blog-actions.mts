@@ -2,6 +2,9 @@
 // error TS2305: Module '"react"' has no exported member 'cache'.
 ///<reference types="react/canary" />
 
+import type { IModel } from "./schema-helper.mjs";
+import type { IBLog, ICodeBlock, IHeading } from "./blog.mjs";
+
 import __path from "node:path";
 import { writeFile } from "fs/promises";
 import punycode from 'punycode/punycode.js'
@@ -9,13 +12,10 @@ import { cache } from "react";
 
 import { compile } from "utils/mdx/index.mjs";
 import { readFile } from "utils/file.mjs";
-import { IBLog, ICodeBlock, IHeading, IModel, Model } from "./index.mjs";
-import { toBlog } from "./Blog.mjs";
-import { toMDXContent } from "./MDXContentRaw.mjs";
-import { toCodeBlock } from "./CodeBlocks.mjs";
-import { headingKeys, toHeading } from "./Headings.mjs";
+import { toBlog, toCodeBlock, toHeading, toMDXContent, toSearchIndex, BlogModel, CodeBlockModel, HeadingModel, MDXContentModel, SearchIndexModel } from "./blog.mjs";
+import { headingKeys } from "./blog/Headings.mjs";
 import { getBlogIdsOfTag, getMatchedTags, normalizeTags, saveTags, updateTags } from "./tag-actions.mjs";
-import { isSystemBlog, reserveTags, tagDiff } from "./tags-utils.mjs";
+import { isSystemBlog, reserveTags, tagDiff } from "./blog/tags-utils.mjs";
 import { pick } from "lodash-es";
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -118,10 +118,10 @@ export async function createPost(postBlob: File, { remarkUsageOption }: any) {
 }
 
 export const getPost = cache(async function getPost(id: string) {
-  const _post = (await Model.Blog.findById(id));
-  const content = (await Model.MDXContent.findOne({ blogId: id }));
-  const codeBlocks = (await Model.CodeBlock.find({ blogId: id })) as ICodeBlock[];
-  const headings = (await Model.Heading.find({ blogId: id })) as IHeading[];
+  const _post = (await BlogModel.findById(id));
+  const content = (await MDXContentModel.findOne({ blogId: id }));
+  const codeBlocks = (await CodeBlockModel.find({ blogId: id })) as ICodeBlock[];
+  const headings = (await HeadingModel.find({ blogId: id })) as IHeading[];
   if (!_post || !content || !codeBlocks || !headings) return {}
   const post = toBlog(_post);
   return {
@@ -138,7 +138,7 @@ export const getPost = cache(async function getPost(id: string) {
 const getPosts = (async function (ids: string[]) {
   const posts: (IBLog & IModel)[] = []
   for (const id of ids) {
-    const _post = (await Model.Blog.findById(id));
+    const _post = (await BlogModel.findById(id));
     if (!_post) continue;
     posts.push(toBlog(_post))
   }
@@ -147,11 +147,12 @@ const getPosts = (async function (ids: string[]) {
 
 export const getBlogsOfTag = cache(async function getBlogsOfTag(tag: string) {
   const ids = await getBlogIdsOfTag(tag)
-  return await getPosts(ids)
+  // return []
+  return (await getPosts(ids)).filter(b => !isSystemBlog(b.tags));
 })
 
 export async function getPostList() {
-  const posts = await Model.Blog.find() as IBLog[];
+  const posts = await BlogModel.find() as IBLog[];
   //@ts-ignore
   return posts.map((p) => (toBlog(p)));
 }
@@ -168,7 +169,7 @@ export async function getPostList() {
 // export const getLatestPopulatePost = cache(async function () {
 export const getLatestPopulatePost = cache(async function getLatestPopulatePost(timestamp: number) {
   // @ts-ignore
-  const posts = await Model.Blog.find().sort({ updatedAt: -1 }).limit(15) as any[];
+  const posts = await BlogModel.find().sort({ updatedAt: -1 }).limit(15) as any[];
   // console.log(posts, "刚从数据库中获取的文章列表~");
   return posts.filter(p => p.title && !isSystemBlog(p.tags)).map((p) => toBlog(p));
 })
@@ -204,14 +205,14 @@ async function savePost(
     //   await updateBlog(blog, code, codeBlocks, rawCode);
     //   return postId;
     // }
-    const newPost = await Model.Blog.insertMany([blog]);
+    const newPost = await BlogModel.insertMany([blog]);
     const blogId = newPost[0]._id;
     const content = code;
-    await Model.MDXContent.insertMany([{ content, blogId, rawContent: rawCode }]);
+    await MDXContentModel.insertMany([{ content, blogId, rawContent: rawCode }]);
     const _codeBlocks = codeBlocks.map((block) => {
       return transformCodeBlockToModel(block, blogId)
     });
-    codeBlocks && await Model.CodeBlock.insertMany(_codeBlocks);
+    codeBlocks && await CodeBlockModel.insertMany(_codeBlocks);
 
     headings = headings?.map(h => {
       // ({ depth: h.depth, value: h.value, id: h.data.id, ancestors: h.ancestors, children: h.children })
@@ -220,7 +221,7 @@ async function savePost(
       return pick(h, headingKeys);
     })
 
-    headings && await Model.Heading.insertMany(headings);
+    headings && await HeadingModel.insertMany(headings);
     await saveTags(blog.tags, blogId)
     return String(blogId);
   } catch (error) {
@@ -236,7 +237,7 @@ export async function updateBlog$1({ blog, tags }: { blog: IBLog, tags?: string[
 
 async function updateBlogTags({ blog, tags }: { blog: IBLog, tags: string[] }) {
   tags = await updateTags(tags, blog.tags, blog._id)
-  await Model.Blog.findByIdAndUpdate(blog._id, { tags, keywords: tags.join(',') })
+  await BlogModel.findByIdAndUpdate(blog._id, { tags, keywords: tags.join(',') })
 }
 
 function transformCodeBlockToModel(block: any, blogId = '') {
@@ -253,15 +254,15 @@ async function updateBlog(blog: any, code = "", codeBlockModels: any[] = [], raw
   const blogId = blog._id;
   blog.tags = await normalizeTags(blog.tags);
   // console.log("update post", blogId);
-  await Model.Blog.updateOne({ _id: blogId }, { ...blog, path: getRelPath(blog.path) });
+  await BlogModel.updateOne({ _id: blogId }, { ...blog, path: getRelPath(blog.path) });
   // prettier-ignore
-  await Model.MDXContent.updateOne({ blogId }, { content, rawContent: rawCode });
-  await Model.CodeBlock.deleteMany({ blogId })
-  await Model.CodeBlock.insertMany(codeBlockModels);
+  await MDXContentModel.updateOne({ blogId }, { content, rawContent: rawCode });
+  await CodeBlockModel.deleteMany({ blogId })
+  await CodeBlockModel.insertMany(codeBlockModels);
 }
 
 async function queryPostId(path: string) {
-  const post = await Model.Blog.find({ path: getRelPath(path) });
+  const post = await BlogModel.find({ path: getRelPath(path) });
   // console.log(post, "post++++++++++++++++");
 
   if (post.length) return String(post[0]._id);

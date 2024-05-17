@@ -1,4 +1,5 @@
-import type { IBLog, IModel } from "@db/blog-model/blog/index.mjs";
+import type { IBLog, IModel } from "@db/blog-model";
+
 import { _parseFloat, _parseInt } from "utils/number.mjs";
 import dayjs from "dayjs";
 

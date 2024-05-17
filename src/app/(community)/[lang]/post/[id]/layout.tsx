@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import style from './article.module.css'
-import { isSystemBlog } from "@db/blog-model/blog/tags-utils.mjs";
+import { isSystemBlog } from "@db/blog-model";
 import { getPost } from "@/app/(community)/actions";
+import style from './article.module.css'
 
 export type LayoutProps = {
   children: React.ReactNode,

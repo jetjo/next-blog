@@ -1,7 +1,8 @@
-import { Model } from "../index.mjs";
+import type { IModel } from "./schema-helper.mjs";
+import { UserModel } from "./auth.mjs";
 
 export async function login(email: string, password: string) {
-  const user = await Model.User.findOne({ email });
+  const user = await UserModel.findOne({ email });
   if (!user) {
     throw new Error("User not found");
   }
@@ -12,10 +13,10 @@ export async function login(email: string, password: string) {
 }
 
 export async function register(email: string, password: string) {
-  const user = await Model.User.findOne({ email });
+  const user = await UserModel.findOne({ email });
   if (user) {
     throw new Error("User already exists");
   }
-  const newUser = await Model.User.insertMany([{ email, password }]);
+  const newUser = await UserModel.insertMany([{ email, password }]);
   return newUser[0];
 }
