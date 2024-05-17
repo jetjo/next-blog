@@ -11,7 +11,11 @@
     "start": "next start",
     "lint": "next lint",
     "show-ts-conf": "ts-node --showConfig",
-    "build-fonts": "node .bin/build-fonts.mjs"
+    "build-fonts": "node .bin/build-fonts.mjs",
+    "lerna-ls-pkgs": "lerna la",
+    "lerna-dev": "lerna run dev --scope=\"next-blog\"",
+    "lerna-watch-deps": "lerna watch --ignore=\"next-blog\"  --ignore=\"search\" -- lerna run predev --scope=\\$LERNA_PACKAGE_NAME",
+    "task-dev": "pnpm lerna-watch-deps & pnpm lerna-dev"
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.24.1",
