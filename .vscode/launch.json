@@ -23,6 +23,10 @@
             "request": "launch",
             "runtimeExecutable": "pnpx",
             "runtimeArgs": [
+                // 此任务最终运行根项目`next-blog`的`next dev`命令,
+                // 经测试得知, "next dev"不仅会在根项目源文件更新后自动刷新,
+                // 而且,当根项目所依赖的子项目的源文件更新并重新打包后也会自动刷新.
+                // 所以不需要依赖`lerna`的`workspace watch`模式.
                 "lerna",
                 "run",
                 "dev",
