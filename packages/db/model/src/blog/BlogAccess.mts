@@ -1,4 +1,4 @@
-import { ObjectId } from "@db/driver/index.mjs";
+import { ObjectId } from "@db/driver";
 
 export const BlogAccess = {
   userId: {

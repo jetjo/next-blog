@@ -1,5 +1,5 @@
 import type { Schema } from "mongoose";
-import { db, dbOption } from "@db/driver/index.mjs";
+import { db, dbOption } from "@db/driver";
 
 const _GLOBAL = globalThis as unknown as GlobalNode;
 

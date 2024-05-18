@@ -17,9 +17,12 @@
     ".": {
       "types": "./dist/index.d.mts",
       "default": "./dist/index.mjs"
-    },
-    "./*": "./dist/*"
+    }
   },
+  "files": [
+    "./dist/*",
+    "./src/*"
+  ],
   "dependencies": {
     "utils": "workspace:*",
     "@db/driver": "workspace:*",

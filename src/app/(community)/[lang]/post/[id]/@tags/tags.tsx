@@ -8,7 +8,7 @@ import { FaRegEdit, FaRegSave } from 'react-icons/fa'
 // 分子结构, correlate
 import { SiMoleculer } from "react-icons/si";
 import { IoMdAdd } from "react-icons/io";
-import { tagDiff } from "@db/blog-model";
+import { tagDiff } from "utils/tags-utils.mjs";
 import { getRelatedTags, updatePost } from "@/app/(community)/actions";
 import style from './tag.module.css'
 

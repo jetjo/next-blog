@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { isSystemBlog } from "@db/blog-model";
+import { isSystemBlog } from "utils/tags-utils.mjs";
 import { getPost } from "@/app/(community)/actions";
 import style from './article.module.css'
 

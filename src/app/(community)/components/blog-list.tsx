@@ -1,4 +1,4 @@
-import { isSystemBlog } from "@db/blog-model";
+import { isSystemBlog } from "utils/tags-utils.mjs";
 import BackgroundYear from "@/components/BackgroundYear/BackgroundYear";
 import { getLatestPopularPostGroupByYear } from "../actions";
 import BlogItem from "./blog-item";

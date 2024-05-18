@@ -1,5 +1,5 @@
 import { pick } from "lodash-es";
-import { ObjectId } from "@db/driver/index.mjs";
+import { ObjectId } from "@db/driver";
 import { IHeading, IHeadingDoc } from "../blog.mjs";
 
 export const Heading = {
