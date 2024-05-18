@@ -43,7 +43,7 @@
             //     "pattern": "Local: http://localhost:([0-9]+)",
             //     "uriFormat": "http://localhost:%s"
             // }
-        }
+        },
         {
             "name": "Dev Next App",
             "request": "launch",

@@ -9,7 +9,7 @@ import { allActiveLabels } from "@/langs";
 
 export interface CodeBlockInfo { lang: string, filename: string, uuid: string, className: string, block: { code: string }, dynamicBlock: { code: string, html: string } }
 
-function Pre({ preferGramLang = allActiveLabels, switcher, codeBlocks, children, hiddenForSwitcher, filenames = '', langs = '', uuids = '', codeClassNames = '', codeLenMax: _codeLenMax = 0, dynamicBlock, ...props }: any) {
+function Pre({ preferGramLang = allActiveLabels, switcher, codeBlocks, children, hiddenforswitcher: hiddenForSwitcher, filenames = '', langs = '', uuids = '', codeclassnames:codeClassNames = '', codelenmax: _codeLenMax = 0, dynamicBlock, ...props }: any) {
   const codeLenMax = _codeLenMax;
   // console.log({ children, hiddenForSwitcher, filenames, langs, uuids, codeClassNames, switcher, ...props });
 

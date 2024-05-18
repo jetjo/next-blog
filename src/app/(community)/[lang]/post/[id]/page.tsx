@@ -43,12 +43,18 @@ export default async function Page({ params: { id, ...params }, ...props }: Prop
   // console.dir({ post });
   if (!post) return <NoContent className={" relative md:-right-4 lg:-right-8 xl:-right-10 "} message="没有此文章🥹!" />
 
+  if (content.content) {
+    content.content = content.content.replaceAll('hiddenForSwitcher', 'hiddenforswitcher');
+    content.content = content.content.replaceAll('codeClassNames', 'codeclassnames');
+    content.content = content.content.replaceAll('codeLenMax', 'codelenmax');
+  }
   const MDXContent = await loadCom_({ code: content?.content || "" });
+  // console.dir(content.content, { depth: Infinity })
   if (!MDXContent) return <NoContent className={" relative md:-right-4 lg:-right-8 xl:-right-10 "} message="文章加载失败了☹️!" />
 
   const preferGramLang = JSON.parse(cookies().get('preferGramLang')?.value || '{}') as AllActiveLabels;//['js']
 
-  const __html = await render(<Article id={id} ssrEntirely MDXContent={MDXContent} />);
+  // const __html = await render(<Article id={id} ssrEntirely MDXContent={MDXContent} />);
 
   // return <div dangerouslySetInnerHTML={{ __html }}></div>
   return <Article id={id} preferGramLang={preferGramLang} MDXContent={MDXContent} codeBlocks={codeBlocks} />;

@@ -5,7 +5,8 @@
   "scripts": {
     "debug0": "NODE_OPTIONS='-r ts-node/register --loader ts-node/esm --no-deprecation  --no-warnings' next dev",
     "debug": "NODE_OPTIONS='--inspect --no-deprecation  --no-warnings' next dev",
-    "dev": "pnpm prebuild && next dev",
+    "dev": "next dev",
+    "_dev": "pnpm _prebuild && next dev",
     "dev-wln": "NODE_OPTIONS='  --no-warnings ' next dev --hostname 0.0.0.0 --experimental-https",
     "build": "next build",
     "start": "next start",
@@ -13,9 +14,10 @@
     "show-ts-conf": "ts-node --showConfig",
     "build-fonts": "node .bin/build-fonts.mjs",
     "lerna-ls-pkgs": "lerna la",
-    "prebuild": "echo \"[next-blog]-Stage: 安装依赖的子项目...\" && pnpm i @db/blog-model -w",
+    "_prebuild": "echo \"[next-blog]-Stage: 安装依赖的子项目...\" && pnpm i @db/blog-model -w",
     "lerna-dev": "lerna run dev --scope=\"next-blog\"",
-    "lerna-watch-deps": "lerna watch --ignore=\"next-blog\"  --ignore=\"search\" -- lerna run predev --scope=\\$LERNA_PACKAGE_NAME",
+    "lerna-build-deps": "lerna run build --ignore=\"next-blog\"  --ignore=\"blog-search\"",
+    "lerna-watch-deps": "lerna watch --ignore=\"next-blog\"  --ignore=\"blog-search\" -- pnpm lerna-build-deps",
     "task-dev": "pnpm lerna-watch-deps & pnpm lerna-dev"
   },
   "dependencies": {
@@ -73,7 +75,7 @@
   },
   "dependenciesMeta": {
     "@db/blog-model": {
-      "injected": true
+      "injected": false
     }
   }
 }

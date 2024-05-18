@@ -4,10 +4,8 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc --build",
-    "predev": "pnpm build",
-    "pretest": "pnpm build"
+    "predev": "pnpm build"
   },
   "keywords": [],
   "author": "",
