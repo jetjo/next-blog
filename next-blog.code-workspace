@@ -9,7 +9,7 @@
 			"path": "./packages/db/model"
 		},
 		{
-			"name": "search",
+			"name": "blog-search",
 			"path": "./services/search"
 		},
 		{
@@ -36,12 +36,12 @@
 		],
 		"files.exclude": {
 			"**/.git": true,
-			"**/node_modules": true,
 			"**/.svn": true,
 			"**/.hg": true,
 			"**/CVS": true,
 			"**/.DS_Store": true,
 			"**/Thumbs.db": true,
+			"**/node_modules": false,
 			"**/*.git": true
 		},
 		"files.autoSave": "off"

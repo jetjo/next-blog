@@ -176,7 +176,6 @@ const AddTagForm = memo(({ blog, matchedTags = [], onChange }: { blog: IBLog, ma
     }
 
     const handleRelateSearch = async () => {
-        console.log(tagDiff(['1', '2'], ['oth1', 'oth2']));
         const tags = getInputedTags();
         if (tags.length) {
             const _relates = await getRelatedTags({ tags });

@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc --build",
+    "prebuild": "echo \"[@db/blog-model]-Stage: 安装依赖的子项目...\" && pnpm i @db/driver",
     "predev": "pnpm build",
     "pretest": "pnpm build"
   },
@@ -61,9 +62,6 @@
   },
   "dependenciesMeta": {
     "@db/driver": {
-      "injected": true
-    },
-    "utils": {
       "injected": true
     }
   }
