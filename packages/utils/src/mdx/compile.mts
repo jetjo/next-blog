@@ -38,7 +38,8 @@ import remarkMdxChartJS from './plugins/charjs/index.mjs'; // 'remark-mdx-chartj
 import { remarkAssertOrigin } from "./plugins/assert-origin.mjs";
 import { unsupportedLangs, delQuoteAtStartAndEnd, parseTokenStr, rehypeCodeLangSwitcher } from "./plugins/code-switcher.mjs";
 
-import { highLightLoad, _parseFloat, _parseInt } from "../index.mjs";
+import { _parseFloat, _parseInt } from "../number.mjs";
+import { highLightLoad } from "../hightlighter.mjs";
 
 type HAncestor1 = string | null;
 type HAncestor2 = string | null;

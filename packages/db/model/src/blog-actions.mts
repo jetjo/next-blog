@@ -10,7 +10,7 @@ import { writeFile } from "fs/promises";
 import punycode from 'punycode/punycode.js'
 import { cache } from "react";
 
-import { compile } from "utils/mdx/index.mjs";
+import { compile } from "utils/mdx.mjs";
 import { readFile } from "utils/file.mjs";
 import { isSystemBlog, reserveTags, tagDiff } from "utils/tags-utils.mjs";
 import { toBlog, toCodeBlock, toHeading, toMDXContent, toSearchIndex, BlogModel, CodeBlockModel, HeadingModel, MDXContentModel, SearchIndexModel } from "./blog.mjs";

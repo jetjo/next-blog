@@ -6,7 +6,6 @@ import * as _runtime from "react/jsx-runtime";
 // https://unifiedjs.com/explore/package/@mdx-js/react/#when-should-i-use-this
 // https://mdxjs.com/docs/using-mdx/#mdx-provider
 import * as _provider from '@mdx-js/react'
-import { highLightLoad } from "../index.mjs";
 
 type _MDXModule = Awaited<ReturnType<typeof run>>;
 export type RunOptions = Parameters<typeof run>[1];
