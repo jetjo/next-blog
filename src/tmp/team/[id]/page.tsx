@@ -6,7 +6,7 @@ async function fetchTeam(id = "") {
   const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
   if (!res.ok) return undefined;
   const data = await res.json();
-  dir(data);
+  // dir(data);
   return data;
 }
 

@@ -42,7 +42,7 @@ export async function highLightLoad(content = "", { flag = 'js', lineNumbers = t
   //   const html = renderToStaticMarkup(reactNode); // ok
   // const html = await renderCode(reactNode); // NOTE: 不能使用`toHtml`, 报错: Error: Cannot convert a Symbol value to a string
   const html = await renderCode(tree); // ok
-  console.dir({ html: flag === 'html' ? html : undefined, flag, scope, tree: flag === 'html' ? JSON.parse(JSON.stringify(tree)) : undefined }, { depth: Infinity });
+  // console.dir({ html: flag === 'html' ? html : undefined, flag, scope, tree: flag === 'html' ? JSON.parse(JSON.stringify(tree)) : undefined }, { depth: Infinity });
   //   console.log(html);
   return html;
   // return reactNode;

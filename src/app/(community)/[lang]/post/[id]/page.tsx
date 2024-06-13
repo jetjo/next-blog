@@ -9,10 +9,10 @@ import { cookies } from "next/headers";
 
 import { loadCom_ } from "utils/mdx/load.mjs";
 import { NoContent } from '@/components/no-content';
-import { render } from 'utils/hightlighter.mjs';
-export { generateStaticParams } from './_pre-render-utils/page';
 import { Article } from './Article';
 import { getPost } from "../../../actions";
+
+export { generateStaticParams } from './_pre-render-utils/page';
 
 export async function generateMetadata({ params, searchParams }: Props, parent: ResolvingMetadata): Promise<Metadata> {
   // read route params

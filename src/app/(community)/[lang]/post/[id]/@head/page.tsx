@@ -1,8 +1,10 @@
 import type { Props } from "../../types/types.[id]";
+
+import clsx from "clsx";
 import MDXLayout from '../_MDXLayout'
 import BlogDateTime from "@/app/(community)/components/blog-datetime";
 import { getPost } from "@/app/(community)/actions";
-import clsx from "clsx";
+
 export { generateStaticParams } from '../_pre-render-utils/page';
 
 export default async function Header({ params }: Props) {

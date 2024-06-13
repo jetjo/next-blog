@@ -1,4 +1,3 @@
-// import { getLatestPopulatePost } from "../../../app/(community)/actions"
 
 export async function generateStaticParams() {
   const posts = await fetch("http://localhost:3000/api/post")

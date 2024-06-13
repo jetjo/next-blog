@@ -313,7 +313,7 @@ export default function genSetup() {
     // stylesheet.replaceSync(rules1.join(''));
 
     // addStylesheetRules([rules2])
-    console.dir({ _style, rules, theme, rules1, state: document.readyState, rules2 })
+    // console.dir({ _style, rules, theme, rules1, state: document.readyState, rules2 })
   }
   const setupThemeStr = String(setupTheme)
   return `"use strict";\n
