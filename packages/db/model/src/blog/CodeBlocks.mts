@@ -3,6 +3,7 @@ import { ObjectId } from "@db/driver";
 import { ICodeBlockDoc, ICodeBlock } from "../blog.mjs";
 
 export const CodeBlock = {
+    filename: String,
     uuid: {
         type: String,
         unique: true,
@@ -40,6 +41,11 @@ export const CodeBlock = {
         unique: false,
         ref: "Blog",
     },
+    parse: {
+        startPos: Number,
+        matchLen: Number,
+        readingTime: Number,
+    }
 } as const;
 
 export const option = {

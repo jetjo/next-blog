@@ -356,11 +356,11 @@ async function compileFile(file = "", { noHeaderCompile, blogName, matter, remar
 
     // throw new Error('headingKeys还未解决!')
     return {
-      sumReadingTime, 
-      matter, 
-      code: compiled, 
-      content: content1 || content, 
-      codeBlocks: codeBlocks1 || codeBlocks, 
+      sumReadingTime,
+      matter,
+      code: compiled,
+      content: content1 || content,
+      codeBlocks: codeBlocks1 || codeBlocks,
       headings
     };
   } catch (error: any) {
@@ -434,7 +434,9 @@ export async function compile({
   }
   // const codeBlocks = await parseCodeBlocks(res.matter.content);
   // console.dir({ codeBlocks, len: codeBlocks.length }, { depth: 10 });
-  return { ...res, head: res.matter?.data };
+  const matter = res.matter;
+  delete res.matter;
+  return { ...res, head: matter?.data, excerpt: matter?.excerpt };
 }
 
 /**
@@ -562,7 +564,7 @@ async function parseCodeBlocks(content = "") {
     const tokenStr = res[2].trim();
     const code = res[3];
     const reading = readingTime(code, CodeReadingSpeed)?.minutes;
-    console.log({ reading });
+    // console.log({ reading });
     codeBlocks.push({
       codeFenceBoundary,
       uuid: uuidv4(),
@@ -672,7 +674,7 @@ function grayMatter(content = "", { excerpt = defaultExcerpt } = {}) {
   const body = content.slice(sliceStartIdx);
   const matter = _grayMatter(`${header}\n${body}`, { excerpt } as any);
   const data = unSwapMatterHeaderKey(matter.data);
-  console.dir({ matter, data }, { depth: null }); //, 'gray-matter compile result...');
+  // console.dir({ matter, data }, { depth: null }); //, 'gray-matter compile result...');
   return { ...matter, data };
 }
 

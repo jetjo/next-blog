@@ -8,7 +8,6 @@ import type { IBLog, ICodeBlock, IHeading } from "./blog.mjs";
 import __path from "node:path";
 import { writeFile } from "fs/promises";
 import punycode from 'punycode/punycode.js'
-import { cache } from "react";
 
 import { compile } from "utils/mdx.mjs";
 import { readFile } from "utils/file.mjs";
@@ -17,13 +16,20 @@ import { toBlog, toCodeBlock, toHeading, toMDXContent, toSearchIndex, BlogModel,
 import { headingKeys } from "./blog/Headings.mjs";
 import { getBlogIdsOfTag, getMatchedTags, normalizeTags, saveTags, updateTags } from "./tag-actions.mjs";
 import { pick } from "lodash-es";
+import { redis } from "@db/driver"
+import type { RedisJSON } from "@db/driver"
 
 const isDev = process.env.NODE_ENV === 'development'
+const isLowBattery = process.env.BATTERY?.toLocaleLowerCase() === 'low'
+console.log({ isDev, isLowBattery });
+
 
 // const cache = redisCanary.canary
 
 // @ts-ignore
 const _path = __path;
+
+const localCache = {}
 
 // const __dirname = dirname(fileURLToPath(import.meta.url));
 const postStoreDir = process.env.postStorePath!;
@@ -97,7 +103,7 @@ export async function createPost(postBlob: File, { remarkUsageOption }: any) {
     // delete copyCompiled.code;
     // console.dir(copyCompiled, { depth: null });
 
-    if (isDev) {
+    if (isDev && !isLowBattery) {
       // TODO: 如果没有提前创建`.debug`目录, 会抛出异常!
       const debugDir = ".debug";
       const debugFile = _path.resolve(CWD, debugDir, filename.replace(/\.mdx?$/, `-${performance.now()}`) + ".jsx");
@@ -106,6 +112,7 @@ export async function createPost(postBlob: File, { remarkUsageOption }: any) {
     }
 
     const { code, head, codeBlocks, content, headings, sumReadingTime } = compiled;
+    // isDev && dir({ ...compiled, codeBlocks: [compiled.codeBlocks[0]], headings: [compiled.headings[0]] }, { depth: Infinity })
     // 2、编译文件, 并存储到数据库, 返回ID
     // prettier-ignore
     const res = await savePost(getRelPath(fullPath), code, head, codeBlocks!, content!, headings, sumReadingTime);
@@ -117,22 +124,45 @@ export async function createPost(postBlob: File, { remarkUsageOption }: any) {
   }
 }
 
-export const getPost = cache(async function getPost(id: string) {
+export const getPost = (async function getPost(id: string) {
+  const cache = localCache[id]
+  // console.log({ cache, id, localCache }, 'getPost');
+  // const rdCache = await redis.json.GET(id);
+  // console.dir(rdCache, { depth: Infinity })
+  if (cache) {
+    setTimeout(async () => {
+      try {
+        await getPost(id)
+        console.log('已读取博客!');
+      } catch (e) {
+        console.error('博客读取失败!', e);
+      }
+    }, 0);
+    delete localCache[id]
+    return cache;
+  }
   const _post = (await BlogModel.findById(id));
   const content = (await MDXContentModel.findOne({ blogId: id }));
   const codeBlocks = (await CodeBlockModel.find({ blogId: id })) as ICodeBlock[];
   const headings = (await HeadingModel.find({ blogId: id })) as IHeading[];
   if (!_post || !content || !codeBlocks || !headings) return {}
   const post = toBlog(_post);
-  return {
+  const res = {
     post,
     content: toMDXContent(content),
     //@ts-ignore
     codeBlocks: codeBlocks.map(c => toCodeBlock(c)),
     //@ts-ignore
     headings: headings.map(h => toHeading(h)),
-    matchedTags: tagDiff(await getMatchedTags(post), reserveTags)
+    matchedTags: undefined
   };
+  const cacheStr = JSON.stringify(res, null, 4);
+  if (isDev && !isLowBattery) {
+    await writeFile(_path.resolve(CWD, '.debug', post._id + '-query.json'), cacheStr)
+  }
+  // @ts-ignore
+  res.matchedTags = tagDiff(await getMatchedTags(post), reserveTags);
+  return res;
 })
 
 const getPosts = (async function (ids: string[]) {
@@ -145,7 +175,7 @@ const getPosts = (async function (ids: string[]) {
   return posts;
 })
 
-export const getBlogsOfTag = cache(async function getBlogsOfTag(tag: string) {
+export const getBlogsOfTag = (async function getBlogsOfTag(tag: string) {
   const ids = await getBlogIdsOfTag(tag)
   // return []
   return (await getPosts(ids)).filter(b => !isSystemBlog(b.tags));
@@ -166,8 +196,8 @@ export async function getPostList() {
  * @warn 如果文章标题不存在, 则返回的文章列表中会有`null`值
  * @param timestamp 用于判断是否从缓存读取, 当由于某些操作, 热门文章列表需要刷新时, 需要传递一个与之前调用时不同的时间戳
 */
-// export const getLatestPopulatePost = cache(async function () {
-export const getLatestPopulatePost = cache(async function getLatestPopulatePost(timestamp: number) {
+// export const getLatestPopulatePost = (async function () {
+export const getLatestPopulatePost = (async function getLatestPopulatePost(timestamp: number) {
   // @ts-ignore
   const posts = await BlogModel.find().sort({ updatedAt: -1 }).limit(15) as any[];
   // console.log(posts, "刚从数据库中获取的文章列表~");
@@ -208,24 +238,56 @@ async function savePost(
     const newPost = await BlogModel.insertMany([blog]);
     const blogId = newPost[0]._id;
     const content = code;
-    await MDXContentModel.insertMany([{ content, blogId, rawContent: rawCode }]);
-    const _codeBlocks = codeBlocks.map((block) => {
+    const _codeBlocks = codeBlocks?.map((block) => {
       return transformCodeBlockToModel(block, blogId)
     });
-    codeBlocks && await CodeBlockModel.insertMany(_codeBlocks);
 
     headings = headings?.map(h => {
       // ({ depth: h.depth, value: h.value, id: h.data.id, ancestors: h.ancestors, children: h.children })
       h.id = h.data.id;
       h.blogId = blogId;
+      h.children ||= [];
       return pick(h, headingKeys);
     })
-
-    headings && await HeadingModel.insertMany(headings);
     await saveTags(blog.tags, blogId)
+
+    const needCached = {
+      post: toBlog(newPost[0] as any),
+      content: { content, blogId, rawContent: rawCode },
+      codeBlocks: _codeBlocks,
+      headings
+    }
+    const cacheStr = JSON.stringify(needCached, null, 4);
+    if (isDev && !isLowBattery) {
+      await writeFile(_path.resolve(CWD, '.debug', blogId + '-create.json'), cacheStr)
+    }
+    // await redis.json.set(blogId, '$', needCached as RedisJSON) RedisJson模块是Redis的收费模块, 需要单独安装才能使用.
+    setTimeout(async () => {
+      try {
+        await MDXContentModel.insertMany([needCached.content]);
+        _codeBlocks && await CodeBlockModel.insertMany(needCached.codeBlocks);
+        headings && await HeadingModel.insertMany(needCached.headings);
+        console.log('已创建博客!');
+      } catch (e) {
+        console.error('博客创建失败!', e);
+        delete localCache[blogId]
+        delBlog(blogId)
+      }
+    }, 0);
+    localCache[blogId] = needCached;
+    // console.log({ id: blogId, cache: needCached, localCache }, 'savePost');
     return String(blogId);
   } catch (error) {
     console.error(error, 'savePost');
+  }
+}
+
+export async function delBlog(blogId: string) {
+  try {
+    await BlogModel.deleteOne({ _id: blogId })
+  } catch (e) {
+    console.error('博客删除失败!', e);
+    throw new Error('博客删除失败!')
   }
 }
 
@@ -241,10 +303,20 @@ async function updateBlogTags({ blog, tags }: { blog: IBLog, tags: string[] }) {
 }
 
 function transformCodeBlockToModel(block: any, blogId = '') {
+  delete block.switcher;
+  delete block.codeFenceBoundary;
   block = Object.assign({}, block.tokens, block)
   delete block.tokens;
   delete block.langToken;
   block.blogId = blogId;
+  block.parse = {
+    startPos: block.startPos,
+    matchLen: block.matchLen,
+    readingTime: block.readingTime,
+  }
+  delete block.readingTime;
+  delete block.matchLen;
+  delete block.startPos;
   return block;
   // block.tokens = JSON.stringify(block.tokens);
 }

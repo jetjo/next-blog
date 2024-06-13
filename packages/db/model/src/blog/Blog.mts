@@ -76,7 +76,7 @@ const fields = Object.keys(Blog)
 export function toBlog(doc: IBlogDoc) {
   const _res: any = pick(doc, fields)
   _res._id = String(doc._id)
-  _res.links = [...doc.links]
+  _res.links = [...doc.links ?? []]
   _res.tags = [...doc.tags ?? []]
   // @ts-ignore
   _res.date = String(doc['updatedAt'])

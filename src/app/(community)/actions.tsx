@@ -4,6 +4,7 @@ import type { IBLog, IModel } from "@db/blog-model";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createPost as createPost_, getPost as getPost_, getBlogsOfTag as getBlogsOfTag_, getMatchedTags as getMatchedTags_, updateBlog$1, getPostList as getPostList_, getLatestPopulatePost as getLatestPopulatePost_, getBlogIdsOfTag as getBlogIdsOfTag_ } from "@db/blog-model";
+import { cache } from "react";
 
 // import { z } from "zod";
 
@@ -132,17 +133,16 @@ export async function createPostWithState(
   }
 }
 
-export async function getPost(id: string) {
-  const res = await getPost_(id);
-  // dir(res)
-  // console.log('getPost', res.post?.title);
-  return res;
-}
+// NOTE: cache返回的值不能在有`use server;`指令的模块中导出
+const getCachedPost = cache(async (id) => await getPost_(id));
 
+export const getPost = async (id: string) => await getCachedPost(id);
+
+const getCachedPostsOfTag = cache(async (tag) => await getBlogsOfTag_(tag));
 /**
  * @description 不包括系统博客
  */
-export const getPosts = async (tag: string) => await getBlogsOfTag_(tag)
+export const getPosts = async (tag: string) => await getCachedPostsOfTag(tag);
 
 export const getRelatedTags = async ({ tags }: { tags: string[] }) => await getMatchedTags_({ tags })
 
@@ -159,6 +159,8 @@ export const getPostList = async () => await getPostList_();
 
 let timestampForCache = performance.now();
 
+const getCachedPopPost = cache(async (timestamp) => await getLatestPopulatePost_(timestamp));
+
 /**
  * 临时实现, 后续需要修改
  * 根据访问量排序
@@ -166,10 +168,10 @@ let timestampForCache = performance.now();
  * 根据`post`关联的`rate`排序
  * 这些信息来源于`BlogAccess`表
  */
-export const getLatestPopularPost = async (): Promise<(IBLog & IModel)[]> => await getLatestPopulatePost_(timestampForCache);
+export const getLatestPopularPost = (async (): Promise<(IBLog & IModel)[]> => await getCachedPopPost(timestampForCache));
 
 export async function getLatestPopularPostGroupByYear(): Promise<any[]> {
-  const posts = await getLatestPopulatePost_(timestampForCache);
+  const posts = await getCachedPopPost(timestampForCache);
   const postGroup = {} as any;
   for (const post of posts) {
     if (!post) {
