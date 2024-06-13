@@ -16,6 +16,7 @@
     "lerna-ls-pkgs": "lerna la",
     "_prebuild": "echo \"[next-blog]-Stage: 安装依赖的子项目...\" && pnpm i @db/blog-model -w",
     "lerna-dev": "lerna run dev --scope=\"next-blog\"",
+    "lerna-svc-dev": "lerna run dev --scope=\"blog-search\"",
     "lerna-build-deps": "lerna run build --ignore=\"next-blog\"  --ignore=\"blog-search\"",
     "lerna-watch-deps": "lerna watch --ignore=\"next-blog\"  --ignore=\"blog-search\" -- pnpm lerna-build-deps",
     "task-dev": "pnpm lerna-watch-deps & pnpm lerna-dev"
@@ -75,7 +76,7 @@
   },
   "dependenciesMeta": {
     "@db/blog-model": {
-      "injected": false
+      "injected": true
     }
   }
 }

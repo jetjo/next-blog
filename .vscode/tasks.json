@@ -1,0 +1,82 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "lerna dev && watch",
+            "dependsOn": [
+                "lerna-dev",
+                "lerna-svc-dev",
+                "lerna-watch",
+            ]
+        },
+        {
+            "label": "lerna-dev-all",
+            "dependsOn": [
+                "lerna-dev",
+                "lerna-svc-dev"
+            ]
+        },
+        {
+            "label": "lerna-watch",
+            "type": "shell",
+            "hide": true,
+            "isBackground": true,
+            "command": "pnpm lerna-watch-deps",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false,
+                "close": true,
+                "revealProblems": "onProblem"
+            }
+        },
+        {
+            "label": "lerna-dev",
+            "type": "shell",
+            "command": "pnpm lerna-dev",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false,
+                "close": true,
+                "revealProblems": "onProblem"
+            }
+        },
+        {
+            "label": "lerna-svc-dev",
+            "type": "shell",
+            "command": "pnpm lerna-svc-dev",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": true,
+                "close": false,
+                "revealProblems": "onProblem"
+            }
+        },
+        {
+            "label": "lerna-build-deps",
+            "type": "shell",
+            "command": "pnpm lerna-build-deps",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true,
+                "close": false,
+                "revealProblems": "onProblem"
+            }
+        }
+    ]
+}

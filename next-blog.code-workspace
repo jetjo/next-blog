@@ -1,6 +1,10 @@
 {
 	"folders": [
 		{
+			"name": "debug",
+			"path": "./.debug"
+		},
+		{
 			"name": "blog-site",
 			"path": "."
 		},
