@@ -15,7 +15,7 @@ export type IModel = {
 export const ModelGen_ = <S extends Schema, DK extends string>(name = '', schema: S, defineKeys: DK) => {
     const Model = (_GLOBAL.db_models[name] as unknown as false) || db.model(name, schema);
     _GLOBAL.db_models[name] ||= Model;
-    type IDoc = InstanceType<typeof Model>;
+    type IDoc = InstanceType<typeof Model> & { [key: string]: any };
 
     type IPojo = {
         - readonly [key in DK]: IDoc[key];

@@ -1,6 +1,8 @@
 /// <reference types="redis" />
+/// <reference types="@redis/json/dist" />
 
 import { createClient } from 'redis';
+export type { RedisJSON } from '@redis/json/dist/commands';
 // import type { RedisCommandArgument, RedisCommandArguments } from '@redis/client';
 
 const url = process.env.db_redis;
@@ -24,3 +26,5 @@ const client: RedisClient = await createClient({
 // This is likely not portable. A type annotation is necessary.ts(2742)
 export const redis: RedisClient = client;
 export const backendCache: RedisClient = client;
+
+// redis.json.set()
