@@ -1,5 +1,5 @@
 
-export type { IModel } from "./schema-helper.mjs";
+export type { IModel, ChangeStreamDocument } from "./schema-helper.mjs";
 
 export * from './blog.mjs'
 export * from './blog-actions.mjs'

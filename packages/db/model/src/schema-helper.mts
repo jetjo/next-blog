@@ -1,5 +1,9 @@
 import type { Schema } from "mongoose";
-import { db, dbOption } from "@db/driver";
+import { db, dbOption, mongodb } from "@db/driver";
+
+export { mongodb } from '@db/driver'
+
+export type ChangeStreamDocument<T extends mongodb.BSON.Document> = mongodb.ChangeStreamDocument<T>;
 
 const _GLOBAL = globalThis as unknown as GlobalNode;
 

@@ -1,4 +1,4 @@
-import { ObjectId, db as _db, connectOption, dbOption } from "utils/mongoose.mjs";
+import { ObjectId, db as _db, connectOption, dbOption, mongodb } from "utils/mongoose.mjs";
 
 const _GLOBAL = globalThis as unknown as GlobalNode;
 
@@ -12,5 +12,5 @@ connectOption.dbName = process.env.dbName;
 const uri = `${server}/${connectOption.dbName}`;
 await db.connect(uri, connectOption);
 
-export { ObjectId, db, dbOption };
+export { ObjectId, db, dbOption, mongodb };
 

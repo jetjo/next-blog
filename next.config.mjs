@@ -17,6 +17,7 @@ const withMDX = nextMDX({
 const nextConfig = {
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx", "mjs", "mts"],
   experimental: {
+    typedRoutes: true,
     // taint: true,
     // ...,
     serverComponentsExternalPackages: [

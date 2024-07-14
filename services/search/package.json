@@ -8,7 +8,7 @@
     "build": "tsc --build",
     "_prebuild": "echo \"[blog-search]-Stage: 安装依赖的子项目...\" && pnpm i @db/blog-model @db/driver",
     "predev": "pnpm build",
-    "dev": "NODE_OPTIONS=' --experimental-detect-module ' node ./dist/index.mjs"
+    "dev": "NODE_OPTIONS=' --experimental-detect-module ' node ./dist/index.mjs --watch"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@db/blog-model": "workspace:*",
     "@db/driver": "workspace:*",
+    "jsdom": "^24.1.0",
     "utils": "workspace:*"
   },
   "dependenciesMeta": {

@@ -1,6 +1,6 @@
 // @ts-check
 import * as React from 'react'
-import {createPost} from '@/app/(community)/actions'
+import {createPost} from '@/app/[lang]/(blog)/actions'
 import { SubmitButton } from '@/components/client/buttons';
 import { BiUpload } from 'react-icons/bi';
 

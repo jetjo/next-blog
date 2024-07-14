@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import mongodb from "mongodb";
 
 mongoose.set("strictQuery", false);
 
@@ -21,4 +22,4 @@ const dbOption = new Proxy(_dbOptions, {
   },
 });
 
-export { mongoose as db, connectOption, ObjectId, dbOption };
+export { mongodb, mongoose as db, connectOption, ObjectId, dbOption };

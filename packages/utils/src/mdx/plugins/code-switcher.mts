@@ -29,7 +29,7 @@ const delQuoteAtStartAndEndGy = (str = '') =>
  * 输入:
  * ```js
  * const content = `filename="app/api/search/route.ts" switcher`
- * ···
+ * ```
  * 输出:
  * ```js
  * {filename: "app/api/search/route.ts", switcher: true}

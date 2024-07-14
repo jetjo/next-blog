@@ -8,7 +8,7 @@ export default function TestCom_(props) {
   if(isPub) return null;
     return (<div style={{bottom: props.offset||'0'}} className="fixed-to-b">
       <p className="">Layout嵌套层级: {layoutLevel++}</p> 
-      {props.analytics}
-      {props.team}
+      {/* {props.analytics}
+      {props.team} */}
       </div>)
 }

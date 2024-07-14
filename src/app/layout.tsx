@@ -8,7 +8,7 @@ import { inter, robotMono, notoSans, notoSansSC } from '@/assets/fonts'
 
 import TestCom_ from "@/tmp/components/TestCom_";
 import Plum2 from "@/components/client/Plum2";
-import { Theme } from "@/components/Theme";
+import { Theme } from "@/components/server/Theme";
 
 import "utils/LangUtils.mjs";
 
@@ -52,7 +52,7 @@ export default function RootLayout({ children, params, ...props }: any) {
         </Script> */}
         <Theme />
         <Plum2 />
-        {/* {props.nav} 不能加载(community)/@nav插槽 */}
+        {/* {props.nav} 不能加载(blog)/@nav插槽 */}
         {children}
         <div className="auth-slot p-7">{props.auth}</div>
         <TestCom_ {...props} />

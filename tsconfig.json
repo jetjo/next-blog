@@ -44,9 +44,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/(community)/[lang]/post/[id]/_components/icons/Cross.tsx",
-    "src/app/(community)/[lang]/post/[id]/_components/icons/Check.tsx",
-    "src/app/(community)/[lang]/post/[id]/page.tsx",
+    "src/app/[lang]/(blog)/[lang]/post/[id]/_components/icons/Cross.tsx",
+    "src/app/[lang]/(blog)/[lang]/post/[id]/_components/icons/Check.tsx",
+    "src/app/[lang]/(blog)/[lang]/post/[id]/page.tsx",
     "packages/utils/index.ts"
   ],
   "exclude": [

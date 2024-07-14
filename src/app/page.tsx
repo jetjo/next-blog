@@ -1,5 +1,5 @@
 import React from "react";
-// import Nav from "./(community)/components/Nav";
+// import Nav from "./(blog)/components/Nav";
 import HomePage from "@/view/Home/Home";
 
 const Page: React.FC = () => {

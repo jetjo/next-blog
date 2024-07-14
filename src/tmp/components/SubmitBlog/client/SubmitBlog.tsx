@@ -2,8 +2,8 @@
 "use client";
 
 import * as React from "react";
-import type { PostFormState } from "@/app/(community)/actions";
-import { createPostWithState } from "@/app/(community)/actions";
+import type { PostFormState } from "@/app/[lang]/(blog)/actions";
+import { createPostWithState } from "@/app/[lang]/(blog)/actions";
 import { SubmitButton } from "@/components/client/buttons";
 import { BiUpload } from "react-icons/bi";
 import { useFormState } from "react-dom";
@@ -17,6 +17,8 @@ export default function SubmitBlog() {
 
   const pathName = usePathname();
   // console.log({ pathName });
+  // `useFormState`第一个参数: 表单提交时, 调用次序: form表单的`action`属性值 -> `formAction` -> `createPostWithState`
+  // `useFormState`第二个参数: `useFormState`第一个参数的第一个参数的初始值
   const [_state, formAction] = useFormState<Readonly<PostFormState>, FormData>(
     createPostWithState,
     {

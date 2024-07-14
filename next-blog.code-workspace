@@ -45,9 +45,24 @@
 			"**/CVS": true,
 			"**/.DS_Store": true,
 			"**/Thumbs.db": true,
-			"**/node_modules": false,
-			"**/*.git": true
+			"**/node_modules": true,
+			"**/*.git": true,
+			"**/.vscode": true,
+			"../.vscode": true,
+			".vscode": true,
+			"../.nx": true,
+			"**/.nx": true,
+			".nx": true,
+			"../.bin": true,
+			"**/.bin": true,
+			".bin": true,
+			"../.next": true,
+			"**/.next": true,
+			".next": true,
+			"../node_modules": true,
+			"node_modules": true
 		},
-		"files.autoSave": "off"
+		"files.autoSave": "off",
+		"typescript.tsdk": "blog-site/node_modules/typescript/lib"
 	}
 }
