@@ -35,7 +35,7 @@ export default function RootLayout({ children, params, ...props }: any) {
         notoSans.variable,
         notoSansSC.variable,
         inter.variable,
-        'px-4',
+        'px-8',
         'md:px-14',
         'lg:px-24',
         'overflow-x-hidden overflow-y-auto',

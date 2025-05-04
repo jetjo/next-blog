@@ -61,6 +61,12 @@
     margin-bottom: .5em;
 }
 
+.article [mdx-wrapper] ul li:not(:where([class~=not-prose] *))::first-line {
+    font-size: 1.1em;
+    font-weight: 700;
+    /* line-height: 1.5; */
+}
+
 .article [mdx-wrapper] ul li:not(:where([class~=not-prose] *))::before {
     content: "";
     width: .525em;

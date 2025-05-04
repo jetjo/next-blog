@@ -37,7 +37,9 @@ main {
   垂直方向超出显示滚动条. */
   overflow: hidden auto;
   /* 自适应字体尺寸 */
-  font-size: calc(.8em + .333333vw);
+  font-size: calc(12px + .333333vw);
+  /* 不同浏览器的root元素的`em`值不同 */
+  /* font-size: calc(.8em + .333333vw); */
   /* 自适应字体颜色 */
   color: var(--foreground);
   line-height: 1.5;
@@ -73,7 +75,8 @@ main {
   --main-nav-bg-color: hwb(60 100% 0% / 0.75);
   --common-border-color: hsl(217.89deg 18.1% 79.41%);
   --code-header-bg: hsl(130 9% 95% / 1);
-  --code-block-bg-color: hsl(55deg 50% 97% / 60%);
+  --code-block-bg-color: hsl(222deg 55% 55% / 60%);
+  /* --code-block-bg-color: hsl(55deg 50% 97% / 60%); */
   --inline-code-color: hsl(200deg 33.61% 47.25%);
   /* text-green-400 */
   --pass-icon-color: hsl(141.89deg 69.16% 58.04%);
@@ -109,7 +112,8 @@ main {
   --common-border-color: hwb(270 25% 80% / 1);
   --code-header-bg: hsl(230deg 13.4% 17.51%);
   /* bg-stone-950 */
-  --code-block-bg-color: hsl(20deg 14.29% 4.12%);
+  --code-block-bg-color: hsl(222deg 55% 55% / 60%);
+  /* --code-block-bg-color: hsl(20deg 14.29% 4.12%); */
   --inline-code-color: hsl(200 46% 61% / 1);
   /* text-green-500 */
   --pass-icon-color: hsl(142.09deg 70.56% 45.29%);

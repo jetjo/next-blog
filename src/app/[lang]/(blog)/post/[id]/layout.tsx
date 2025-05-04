@@ -36,11 +36,13 @@ export default async function Layout({ params: { lang, id, ...params }, ...props
   //   )
   // }
 
+  const articleWidth = " max-w-xl min-w-0 md:flex-1 md:mx-0";
+
   return (
-    <div className={' flex flex-col max-w-full items-start gap-9'}>
-      <header article-header="" className={clsx(style.article, 'max-w-4xl min-w-40')}>{props.head}</header>
+    <div className={' flex flex-col max-w-full items-stretch gap-9'}>
+      <header article-header="" className={clsx(style.article, articleWidth)}>{props.head}</header>
       <div className={" max-w-full block md:flex md:justify-center md:align-top md:gap-8 lg:gap-16 xl:gap-20 "}>
-        <div className={" max-w-xl min-w-0 mx-auto md:flex-1 md:mx-0"}>
+        <div className={clsx(articleWidth, 'mx-auto')}>
           <article
             className={clsx(style.article)}>
             {props.children}

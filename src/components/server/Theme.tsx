@@ -1,8 +1,9 @@
 import clsx from "clsx"
-import { cookies } from "next/headers"
+// import { cookies } from "next/headers"
 
 export function Theme() {
-    const theme = cookies().get('theme')?.value || 'light';
+    const theme = 'light';
+    // const theme = cookies().get('theme')?.value || 'light';
     return <div
         id={`-theme-flag___`}
         theme={`${theme}`}
