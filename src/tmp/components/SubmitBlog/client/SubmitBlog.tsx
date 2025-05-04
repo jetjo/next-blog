@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 const isDev = process.env.NODE_ENV === "development";
 
 export default function SubmitBlog() {
-  if (!isDev) return null;
+  // if (!isDev) return null;
 
   const pathName = usePathname();
   // console.log({ pathName });
@@ -51,12 +51,13 @@ export default function SubmitBlog() {
     setIsAfterPost(false);
     const postId = state.postId || state.ref?.postId;
     if (postId) {
-      router.push(`/post/${postId}`);
+      router.push(`/post/${postId}` as unknown as any);
       return; // 不写会执行后续语句
     }
     alert(state.message || "上传失败, 请联系系统管理员~");
   }, [state]);
 
+  if (!isDev) return null;
   return (
     <div>
       {/* <h2>新建文章</h2> */}
