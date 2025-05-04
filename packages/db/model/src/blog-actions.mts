@@ -14,7 +14,7 @@ import { readFile } from "utils/file.mjs";
 import { isSystemBlog, reserveTags, tagDiff } from "utils/tags-utils.mjs";
 import { toBlog, toCodeBlock, toHeading, toMDXContent, toSearchIndex, BlogModel, CodeBlockModel, HeadingModel, MDXContentModel, SearchIndexModel } from "./blog.mjs";
 import { headingKeys } from "./blog/Headings.mjs";
-import { getBlogIdsOfTag, getMatchedTags, normalizeTags, saveTags, updateTags } from "./tag-actions.mjs";
+import { getBlogIdsOfTag, getMatchedTags, normalizeTags, saveTags, updateTags, getBlogCountTopN } from "./tag-actions.mjs";
 import { pick } from "lodash-es";
 import { redis } from "@db/driver"
 import type { RedisJSON } from "@db/driver"
@@ -339,4 +339,8 @@ async function queryPostId(path: string) {
 
   if (post.length) return String(post[0]._id);
   return null;
+}
+
+export const getAllTagFromCache = async () => {
+  return getBlogCountTopN(-1);
 }

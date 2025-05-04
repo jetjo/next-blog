@@ -23,10 +23,10 @@ export default function Image({ srcLight, srcDark, src, ...props }: any) {
   srcDark && (srcDark = trimQuote(srcDark));
   src && (src = trimQuote(src))
   src ||= srcLight;
-  if (!srcDark) {
-    if (!URL.canParse(src)) return <ImgPlaceholderCom {...props} />
-    return <_Image loader={imageLoader} src={src} priority={true} {...props} />;
-  }
+  // if (!srcDark) {
+  //   if (!URL.canParse(src)) return <ImgPlaceholderCom {...props} />
+  //   return <_Image loader={imageLoader} src={src} priority={true} {...props} />;
+  // }
   // 重新渲染时, 传递的src被忽略
   const [themeSrc, setThemeSrc] = useState(src);
   const [preloadedThemeSrc, setPreloadThemeSrc] = useState(srcDark);
@@ -53,7 +53,10 @@ export default function Image({ srcLight, srcDark, src, ...props }: any) {
     }, { mode: 'pre' })
     return () => (clean(), void 0);
   }, [])
-
+  if (!srcDark) {
+    if (!URL.canParse(src)) return <ImgPlaceholderCom {...props} />
+    return <_Image loader={imageLoader} src={src} priority={true} {...props} />;
+  }
   if (!URL.canParse(preloadedThemeSrc) || !URL.canParse(themeSrc)) {
     return <ImgPlaceholderCom {...props} />
   }

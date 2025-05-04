@@ -13,7 +13,7 @@ function Pre({ preferGramLang = allActiveLabels, switcher, codeBlocks, children,
   const codeLenMax = _codeLenMax;
   // console.log({ children, hiddenForSwitcher, filenames, langs, uuids, codeClassNames, switcher, ...props });
 
-  if (hiddenForSwitcher) return null;
+  // if (hiddenForSwitcher) return null;
   // if (!uuids && !langs) return <pre pure-pre='true' {...props}>{children}</pre>
   const isNoLang = !uuids && !langs;
   if (!isNoLang && !langs) {
@@ -49,10 +49,10 @@ function Pre({ preferGramLang = allActiveLabels, switcher, codeBlocks, children,
 
   const [block, setBlock] = useState(switcherContext[preferLang || lgs[0]]);
   const [isLoaded, setIsLoaded] = useState(!switcher)
-  if (!block) {
-    console.warn('未发现代码块!');
-    return null;
-  }
+  // if (!block) {
+  //   console.warn('未发现代码块!');
+  //   return null;
+  // }
 
   // console.log({ block });
 
@@ -67,6 +67,12 @@ function Pre({ preferGramLang = allActiveLabels, switcher, codeBlocks, children,
     }
     setIsLoaded(true);
   }, [setBlock, setIsLoaded])
+
+  if (hiddenForSwitcher) return null;
+  if (!block) {
+    console.warn('未发现代码块!');
+    return null;
+  }
   return (
     <div className={clsx({ " opacity-0": !isLoaded }, "relative transition-opacity my-4 rounded-lg overflow-hidden")}>
       {!isNoLang && <>

@@ -36,6 +36,7 @@ import type { AllActiveLabels, Lang, LangConf } from "@/langs";
 import { _parseInt } from 'utils/number.mjs';
 
 const devopsLabelIcon = {
+    sh: <VscTerminalBash />,
     bash: <VscTerminalBash />,
     cmd: <VscTerminalCmd />,
     powershell: <VscTerminalPowershell />
@@ -84,6 +85,7 @@ const programIcon: any = {
     tailwind: <BiLogoTailwindCss />,
     node: <BiLogoNodejs />,
     markdown: <BiLogoMarkdown />,
+    sh: <BiSolidTerminal />,
     bash: <BiSolidTerminal />,
     zsh: <BiSolidTerminal />,
     json: <BiLogoJavascript />,
@@ -283,10 +285,10 @@ export const matchActiveLangAtServer = (langs: string[], preferGramLang: AllActi
 }
 
 const CodeTab = memo(function CodeTab({ onLangChange, preferLang, langMap, filename, langs = [] }: Prop) {
-    if (!langMap || !Object.keys(langMap).length) {
-        console.warn('未提供可选语言列表!');
-        return null;
-    }
+    // if (!langMap || !Object.keys(langMap).length) {
+    //     console.warn('未提供可选语言列表!');
+    //     return null;
+    // }
     // langMap = langMap.map(lang => ({ ...lang })) // NOTE: 浅复制, 没有使用JSON..., 因为有正则类型的成员
     const [showSwitcher, toggleSwitcherVisible] = useState(false);
     const switcher = useRef<HTMLDivElement>(null)
@@ -300,7 +302,7 @@ const CodeTab = memo(function CodeTab({ onLangChange, preferLang, langMap, filen
         if (handleIdx === -1) return;
         // console.log({ handleIdx });
         langChangeHandlers[handleIdx] = (lang: LangConf) => {
-            const l = findLang(lang, langMap)
+            const l = langMap && findLang(lang, langMap)
             if (!l) {
                 console.warn('不兼容的语言!', { lang, langMap, filename });
                 return;
@@ -352,7 +354,10 @@ const CodeTab = memo(function CodeTab({ onLangChange, preferLang, langMap, filen
             }
         }
     }, [])
-
+    if (!langMap || !Object.keys(langMap).length) {
+        console.warn('未提供可选语言列表!');
+        return null;
+    }
     return (
         <>
             <div ref={tab}

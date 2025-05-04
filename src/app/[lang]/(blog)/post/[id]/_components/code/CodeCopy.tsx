@@ -26,10 +26,10 @@ async function writeClipboardText(text = '') {
 const CodeCopy = memo(function CodeCopy({ codeBlockInfo }: Prop) {
     // console.log(codeBlockInfo);
 
-    if (!codeBlockInfo?.block?.code) {
-        console.error('没有接收到代码!');
-        return null;
-    }
+    // if (!codeBlockInfo?.block?.code) {
+    //     console.error('没有接收到代码!');
+    //     return null;
+    // }
 
     const [stage, setStage] = useState<Stage>('copy-scale-1')
 
@@ -58,7 +58,10 @@ const CodeCopy = memo(function CodeCopy({ codeBlockInfo }: Prop) {
             setStage('copy-scale-1')
         }
     })
-
+    if (!codeBlockInfo?.block?.code) {
+        console.error('没有接收到代码!');
+        return null;
+    }
     return (
         <div className={clsx('hover:bg-white dark:hover:bg-gray-700', stage.includes('check') ? ' text-green-400' : '', ' p-1 rounded flex place-content-center place-items-center')}>
             <i

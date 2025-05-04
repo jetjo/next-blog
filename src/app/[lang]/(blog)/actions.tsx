@@ -5,7 +5,9 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createPost as createPost_, getPost as getPost_, getBlogsOfTag as getBlogsOfTag_, getMatchedTags as getMatchedTags_, updateBlog$1, getPostList as getPostList_, getLatestPopulatePost as getLatestPopulatePost_, getBlogIdsOfTag as getBlogIdsOfTag_ } from "@db/blog-model";
 import { cache } from "react";
+import { getAllTagFromCache as _getAllTagFromCache } from "@db/blog-model";
 
+export const getAllTagFromCache = async () => _getAllTagFromCache();
 // import { z } from "zod";
 
 // const schema = z.object({
@@ -49,7 +51,7 @@ export async function createPost(form: FormData, preState?: PostFormState) {
     // ....
     remarkUsageOption = {
       /**
-       * 用户上传到路径: 
+       * 用户上传到路径:
        * ```js
        * `${process.cwd()}/.data/blogs/${userId}/${ReadmeConf.rootDir}/${pkg.name}/${ReadmeConf.exampleDir}`
        * ```

@@ -21,13 +21,13 @@ const getCode = (__context: any) => {
 function Code({ children, className, codeBlock, suffixEmptyLine = '', codeBlocks, __context }: any) {
   //   const language = className?.replace(/language-/, "") || "";
   const isCodeBlock = !!codeBlock; //!children; //!!__context; //isCodeBlock(clsx(className));
-  if (!isCodeBlock) {
-    return children ? <code className={clsx(className)}>{children}</code> : null;
-  }
+  // if (!isCodeBlock) {
+  //   return children ? <code className={clsx(className)}>{children}</code> : null;
+  // }
 
-  const { html, idx = null, code, codeAsHtml } = codeBlock;// getCode(__context) //block||{}
+  // const { html, idx = null, code, codeAsHtml } = codeBlock;// getCode(__context) //block||{}
 
-  const codeIdxEle = isCodeBlock ? <>{/* {idx} <br /> */}</> : null;
+  // const codeIdxEle = isCodeBlock ? <>{/* {idx} <br /> */}</> : null;
 
   const codeRef = useRef<HTMLElement>(null)
 
@@ -51,7 +51,13 @@ function Code({ children, className, codeBlock, suffixEmptyLine = '', codeBlocks
   //   resizeHandler()
   //   return () => (window.removeEventListener('zoom', handler), window.removeEventListener('resize', handler), void 0)
   // }, [])
+  if (!isCodeBlock) {
+    return children ? <code className={clsx(className)}>{children}</code> : null;
+  }
 
+  const { html, idx = null, code, codeAsHtml } = codeBlock;// getCode(__context) //block||{}
+
+  const codeIdxEle = isCodeBlock ? <>{/* {idx} <br /> */}</> : null;
   return (
     <>
       {codeIdxEle}
