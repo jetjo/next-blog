@@ -35,6 +35,7 @@
 	"settings": {
 		"explorerExclude.backup": {},
 		"cSpell.words": [
+			"mongosh",
 			"predev",
 			"recma"
 		],
