@@ -15,6 +15,8 @@ const withMDX = nextMDX({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  distDir: 'build', // 默认是.next
+  // output: 'export', // Server Actions are not supported with static export.
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx", "mjs", "mts"],
   experimental: {
     typedRoutes: true,

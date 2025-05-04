@@ -35,8 +35,9 @@
     "types": [
       "node",
       "react",
-      "react-dom"
-    ],
+      "react-dom",
+      "mdx"
+    ]
   },
   "include": [
     "global.d.ts",
@@ -47,7 +48,8 @@
     "src/app/[lang]/(blog)/[lang]/post/[id]/_components/icons/Cross.tsx",
     "src/app/[lang]/(blog)/[lang]/post/[id]/_components/icons/Check.tsx",
     "src/app/[lang]/(blog)/[lang]/post/[id]/page.tsx",
-    "packages/utils/index.ts"
+    "packages/utils/index.ts",
+    "build/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",

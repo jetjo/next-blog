@@ -11,3 +11,23 @@ declare global {
     };
 
 }
+
+// import { CSSProp } from "styled-components";
+
+// declare module "styled-components" {
+//   export interface DefaultTheme {
+//     // Your theme stuff here
+//   }
+// }
+
+declare module "react" {
+    interface HTMLAttributes<T> extends DOMAttributes<T> {
+        // css?: CSSProp;
+        theme?: string
+    }
+}
+
+// declare module '*.mdx' {
+//     let MDXComponent: (props: any) => JSX.Element;
+//     export default MDXComponent;
+// }
