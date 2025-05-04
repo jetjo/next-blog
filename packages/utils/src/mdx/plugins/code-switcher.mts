@@ -134,7 +134,7 @@ export function rehypeCodeLangSwitcher({ codeBlocks = [] as any[] }) {
                         // console.dir(parent, { depth: null })
                     }
                 } else if (!unsupportedLangs.includes(lang)) {
-                    console.warn(lang, "不支持的代码块语言");
+                    console.warn(lang, "不支持的代码块语言?");
                     parent.properties.switcher = '';
                     parent.properties.hiddenForSwitcher = '';
                     if (token) {

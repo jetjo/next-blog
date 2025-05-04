@@ -127,7 +127,7 @@ async function compileFileToProgram(file = "", { noHeaderCompile, blogName, prog
     const compiled = String(
       vfile = await _compile(file, {
         SourceMapGenerator,
-        // 编译出的文件在模块系统中的url, 即编译出的文件内的语句`import.meta.url`的值, 
+        // 编译出的文件在模块系统中的url, 即编译出的文件内的语句`import.meta.url`的值,
         // 编译出的文件内导入其他模块时, 如果使用的是相对路径,自然是以此为基准的
         baseUrl: pathToFileURL(programPath),
         development: true,
@@ -260,10 +260,10 @@ function populateAncestors(headings: RemarkHeading[]) {
 }
 
 /**
- * @param {string} [file=""] 
- * @param {Object} param1 
- * @param {ReturnType<MatterNs>} param1.matter 
- * @param {RemarkUsageOption} param1.remarkUsageOption 
+ * @param {string} [file=""]
+ * @param {Object} param1
+ * @param {ReturnType<MatterNs>} param1.matter
+ * @param {RemarkUsageOption} param1.remarkUsageOption
  */
 async function compileFile(file = "", { noHeaderCompile, blogName, matter, remarkUsageOption }) {
   // console.log(noHeaderCompile, "noHeaderCompile");
@@ -530,8 +530,10 @@ async function parseCodeBlocks(content = "") {
   // const reg1 = /~~~[^\n\S]*(\S+)[^\n\S]*([^\n]*?)\n([\s\S]*?)~~~/g;
   // const reg1 = /(~+)[^\n\S]*(\S+)[^\n\S]*([^\n]*?)\n([\s\S]*?)\1/g; //÷
   // const reg1 = /(~{3,})(.*?)\n([\s\S]+?)\n\1/g; //
-  const reg = /([`~]{3,})(.*?)\n([\s\S]+?)\n\1/g; //
+  const reg = /[\u0009\u000B\u000C\u0020\u3000\u1680\u2000-\u2006\u2008-\u200A\u205F\u00A0\u2007\u202F]*([`~]{3,})([^\u000A\u000D\u2028\u2029]+?)\n([\s\S]+?)\n[\u0009\u000B\u000C\u0020\u3000\u1680\u2000-\u2006\u2008-\u200A\u205F\u00A0\u2007\u202F]*\1/g; //
+  // const reg = /([`~]{3,})(.*?)\n([\s\S]+?)\n\1/g; //
   const codeBlocks: any[] = [];
+
   let res,
     idx = 0;
   const getOtherFenceBoundary = (codeFenceBoundary = '') => {
@@ -558,7 +560,7 @@ async function parseCodeBlocks(content = "") {
     const langToken = parseTokenFromLang(lang_);
     const lang = langToken.lang;
     if (unsupportedLangs.includes(lang)) {
-      console.warn({ lang, lang_, meta }, "不支持的代码块语言");
+      console.warn({ res, lang, lang_, meta }, "不支持的代码块语言");
       return;// continue;
     }
     const tokenStr = res[2].trim();
